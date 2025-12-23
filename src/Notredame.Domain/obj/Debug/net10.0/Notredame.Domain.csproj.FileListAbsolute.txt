@@ -1,0 +1,11 @@
+/home/almir/Projetos/notredame/src/Notredame.Domain/bin/Debug/net10.0/Notredame.Domain.deps.json
+/home/almir/Projetos/notredame/src/Notredame.Domain/bin/Debug/net10.0/Notredame.Domain.dll
+/home/almir/Projetos/notredame/src/Notredame.Domain/bin/Debug/net10.0/Notredame.Domain.pdb
+/home/almir/Projetos/notredame/src/Notredame.Domain/obj/Debug/net10.0/Notredame.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/home/almir/Projetos/notredame/src/Notredame.Domain/obj/Debug/net10.0/Notredame.Domain.AssemblyInfoInputs.cache
+/home/almir/Projetos/notredame/src/Notredame.Domain/obj/Debug/net10.0/Notredame.Domain.AssemblyInfo.cs
+/home/almir/Projetos/notredame/src/Notredame.Domain/obj/Debug/net10.0/Notredame.Domain.csproj.CoreCompileInputs.cache
+/home/almir/Projetos/notredame/src/Notredame.Domain/obj/Debug/net10.0/Notredame.Domain.dll
+/home/almir/Projetos/notredame/src/Notredame.Domain/obj/Debug/net10.0/refint/Notredame.Domain.dll
+/home/almir/Projetos/notredame/src/Notredame.Domain/obj/Debug/net10.0/Notredame.Domain.pdb
+/home/almir/Projetos/notredame/src/Notredame.Domain/obj/Debug/net10.0/ref/Notredame.Domain.dll
