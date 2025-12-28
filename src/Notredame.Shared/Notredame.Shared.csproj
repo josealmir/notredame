@@ -1,25 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <RootNamespace>Notredame.Shared</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Divino.OperationResult" />
     <PackageReference Include="OpenTelemetry" />
+    <PackageReference Include="LiteBus.Commands.Abstractions" />
+    <PackageReference Include="LiteBus.Queries.Abstractions" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Compile Remove="Resiliencias\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Remove="Resiliencias\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Remove="Resiliencias\**" />
-  </ItemGroup>
-
 </Project>

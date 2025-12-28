@@ -3,10 +3,11 @@
         <TargetFramework>net10.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
+        <RootNamespace>Notredame.Api</RootNamespace>
     </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\Notredame.App\Notredame.App.csproj" />
-    <ProjectReference Include="..\Notredame.Data\Notredame.Data.csproj" />
+    <ProjectReference Include="..\Notredame.Infra\Notredame.Infra.csproj" />
     <ProjectReference Include="..\Notredame.Domain\Notredame.Domain.csproj" />
     <ProjectReference Include="..\Notredame.Shared\Notredame.Shared.csproj" />
   </ItemGroup>
@@ -15,6 +16,7 @@
     <PackageReference Include="Asp.Versioning.Mvc" />
     <PackageReference Include="Asp.Versioning.Mvc.ApiExplorer" />
     <PackageReference Include="Asp.Versioning.OData" />
+    <PackageReference Include="Divino.OperationResult" />
     <PackageReference Include="Microsoft.AspNetCore.HeaderPropagation" />
     <PackageReference Include="Microsoft.AspNetCore.JsonPatch.SystemTextJson" />
     <PackageReference Include="Microsoft.AspNetCore.OData" />
@@ -38,7 +40,10 @@
     <PackageReference Include="Serilog.Enrichers.Thread" />
     <PackageReference Include="Serilog.Formatting.Compact" />
     <PackageReference Include="Serilog.Settings.Configuration" />
-    <PackageReference Include="Serilog.Sinks.Console" /> 
+    <PackageReference Include="Serilog.Sinks.Console" />
+    <PackageReference Include="LiteBus.Extensions.Microsoft.DependencyInjection" />
+    <PackageReference Include="LiteBus.Events.Extensions.Microsoft.DependencyInjection" />
+    <PackageReference Include="LiteBus.Queries.Extensions.Microsoft.DependencyInjection" />
+    <PackageReference Include="LiteBus.Commands.Extensions.Microsoft.DependencyInjection" />
   </ItemGroup>
-
 </Project>

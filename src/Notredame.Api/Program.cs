@@ -1,8 +1,12 @@
 using System.Diagnostics;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+
 using Notredame.Api.Settings;
+using Notredame.Data;
 using Notredame.Shared;
-using Serilog;
 using Scalar.AspNetCore;
+using Serilog;
 using Serilog.Enrichers.Span;
 using Serilog.Formatting.Compact;
 
@@ -14,8 +18,9 @@ builder.Host.UseSerilog((context, services, configuration) =>
     configuration
         .ReadFrom.Configuration(context.Configuration)
         .Enrich.WithProperty("Environment", Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT"))
-        .Enrich.WithProperty("ApplicationName", Environment.GetEnvironmentVariable(NotredameResource.ServiceName))
+        .Enrich.WithProperty("ApplicationName", NotredameResource.ServiceName)
         .Enrich.WithSpan()
+        .Filter.ByExcluding(x => x.Properties.Any(p => p.Value.ToString().StartsWith("/openapi")))
         .Filter.ByExcluding(x => x.Properties.Any(p => p.Value.ToString().StartsWith("/hc")))
         .Filter.ByExcluding(x => x.Properties.Any(p => p.Value.ToString().StartsWith("/scalar")))
         .Filter.ByExcluding(x => x.Properties.Any(p => p.Value.ToString().StartsWith("/swagger")))
@@ -29,7 +34,12 @@ builder.Host.UseSerilog((context, services, configuration) =>
 builder.Services
        .AddOpenApi()
        .AddLocalization()
-       .AddControllers();
+       .AddControllers()
+       .AddJsonOptions(options =>
+       {
+           options.JsonSerializerOptions.WriteIndented = true;
+           options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter(JsonNamingPolicy.CamelCase));
+       });
 
 builder.Services
         .AddEndpointsApiExplorer();
@@ -57,9 +67,11 @@ builder.Services
        .AddApiVersionNotredame();
 
 builder.Services
+    .AddLitebusNotredame()
     .AddOptionsNotredame()
     .AddApmNotredame(builder.Configuration)
-    .AddCorsNotredame(builder.Configuration);
+    .AddCorsNotredame(builder.Configuration)
+    .AddDiNotredame();
 
 var app = builder.Build();
 
@@ -72,6 +84,7 @@ if (!app.Environment.IsProduction())
     app.MapScalarApiReference();
     app.MapGet("/", () => "/scalar");
 }
+app.UseExceptionHandler("/error");
 
 app.UseHttpsRedirection();
 

@@ -2,6 +2,76 @@
   "version": 3,
   "targets": {
     "net10.0": {
+      "Divino.OperationResult/4.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/OperationResult.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/OperationResult.dll": {}
+        }
+      },
+      "LiteBus.Commands.Abstractions/4.2.0": {
+        "type": "package",
+        "dependencies": {
+          "LiteBus.Messaging.Abstractions": "4.2.0"
+        },
+        "compile": {
+          "lib/net10.0/LiteBus.Commands.Abstractions.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/LiteBus.Commands.Abstractions.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
+      "LiteBus.Messaging.Abstractions/4.2.0": {
+        "type": "package",
+        "dependencies": {
+          "LiteBus.Runtime.Abstractions": "4.2.0"
+        },
+        "compile": {
+          "lib/net10.0/LiteBus.Messaging.Abstractions.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/LiteBus.Messaging.Abstractions.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
+      "LiteBus.Queries.Abstractions/4.2.0": {
+        "type": "package",
+        "dependencies": {
+          "LiteBus.Messaging.Abstractions": "4.2.0"
+        },
+        "compile": {
+          "lib/net10.0/LiteBus.Queries.Abstractions.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/LiteBus.Queries.Abstractions.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
+      "LiteBus.Runtime.Abstractions/4.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/LiteBus.Runtime.Abstractions.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/LiteBus.Runtime.Abstractions.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
       "Microsoft.Extensions.Configuration/10.0.0": {
         "type": "package",
         "dependencies": {
@@ -292,6 +362,96 @@
     }
   },
   "libraries": {
+    "Divino.OperationResult/4.0.1": {
+      "sha512": "gUsjqTI9eimsk/K232P90buwE5O6s+dMIof/Fi2Ymj0CczGh561bQmL52RsWgTnBRx2dsj+5SjUOmBY4RfYP7A==",
+      "type": "package",
+      "path": "divino.operationresult/4.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "divino.operationresult.4.0.1.nupkg.sha512",
+        "divino.operationresult.nuspec",
+        "lib/net6.0/OperationResult.dll",
+        "lib/net7.0/OperationResult.dll",
+        "lib/net8.0/OperationResult.dll"
+      ]
+    },
+    "LiteBus.Commands.Abstractions/4.2.0": {
+      "sha512": "B44JPEeGAxDooTGfvk/4mLgh+5OwfFfd8jbVaJgoWhK0j9czuxHqMt/qijF3nxM6PZ+7Wi0qx1eLtJUlba+viw==",
+      "type": "package",
+      "path": "litebus.commands.abstractions/4.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "icon.png",
+        "lib/net10.0/LiteBus.Commands.Abstractions.dll",
+        "lib/net10.0/LiteBus.Commands.Abstractions.pdb",
+        "lib/net8.0/LiteBus.Commands.Abstractions.dll",
+        "lib/net8.0/LiteBus.Commands.Abstractions.pdb",
+        "lib/net9.0/LiteBus.Commands.Abstractions.dll",
+        "lib/net9.0/LiteBus.Commands.Abstractions.pdb",
+        "litebus.commands.abstractions.4.2.0.nupkg.sha512",
+        "litebus.commands.abstractions.nuspec"
+      ]
+    },
+    "LiteBus.Messaging.Abstractions/4.2.0": {
+      "sha512": "vKNbAMWpD3Zd/cJLAVNooyegOLB3zIDAmfLTICxJLaAUlpIc9Xv2M1+6scrj9low5umIVASZxYFcSMH7gEZIRw==",
+      "type": "package",
+      "path": "litebus.messaging.abstractions/4.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "icon.png",
+        "lib/net10.0/LiteBus.Messaging.Abstractions.dll",
+        "lib/net10.0/LiteBus.Messaging.Abstractions.pdb",
+        "lib/net8.0/LiteBus.Messaging.Abstractions.dll",
+        "lib/net8.0/LiteBus.Messaging.Abstractions.pdb",
+        "lib/net9.0/LiteBus.Messaging.Abstractions.dll",
+        "lib/net9.0/LiteBus.Messaging.Abstractions.pdb",
+        "litebus.messaging.abstractions.4.2.0.nupkg.sha512",
+        "litebus.messaging.abstractions.nuspec"
+      ]
+    },
+    "LiteBus.Queries.Abstractions/4.2.0": {
+      "sha512": "UJ+5miM7yQ8gmnBF84jBYucFd1uvfQPpPw9N+y1ZhqU8hqmuPvGFcKO02QNqOXCtx934dij+/XVWPv0c3UXtqQ==",
+      "type": "package",
+      "path": "litebus.queries.abstractions/4.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "icon.png",
+        "lib/net10.0/LiteBus.Queries.Abstractions.dll",
+        "lib/net10.0/LiteBus.Queries.Abstractions.pdb",
+        "lib/net8.0/LiteBus.Queries.Abstractions.dll",
+        "lib/net8.0/LiteBus.Queries.Abstractions.pdb",
+        "lib/net9.0/LiteBus.Queries.Abstractions.dll",
+        "lib/net9.0/LiteBus.Queries.Abstractions.pdb",
+        "litebus.queries.abstractions.4.2.0.nupkg.sha512",
+        "litebus.queries.abstractions.nuspec"
+      ]
+    },
+    "LiteBus.Runtime.Abstractions/4.2.0": {
+      "sha512": "dEwJgQsiqiM/OWWhTOXIKwvsphdWjCsfhBY0oVjVXPmrKc8kpwCl71QaHFN89lGYnjbffQwfJ6+pYs5iayam2g==",
+      "type": "package",
+      "path": "litebus.runtime.abstractions/4.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "icon.png",
+        "lib/net10.0/LiteBus.Runtime.Abstractions.dll",
+        "lib/net10.0/LiteBus.Runtime.Abstractions.pdb",
+        "lib/net8.0/LiteBus.Runtime.Abstractions.dll",
+        "lib/net8.0/LiteBus.Runtime.Abstractions.pdb",
+        "lib/net9.0/LiteBus.Runtime.Abstractions.dll",
+        "lib/net9.0/LiteBus.Runtime.Abstractions.pdb",
+        "litebus.runtime.abstractions.4.2.0.nupkg.sha512",
+        "litebus.runtime.abstractions.nuspec"
+      ]
+    },
     "Microsoft.Extensions.Configuration/10.0.0": {
       "sha512": "H4SWETCh/cC5L1WtWchHR6LntGk3rDTTznZMssr4cL8IbDmMWBxY+MOGDc/ASnqNolLKPIWHWeuC1ddiL/iNPw==",
       "type": "package",
@@ -811,6 +971,9 @@
   },
   "projectFileDependencyGroups": {
     "net10.0": [
+      "Divino.OperationResult >= 4.0.1",
+      "LiteBus.Commands.Abstractions >= 4.2.0",
+      "LiteBus.Queries.Abstractions >= 4.2.0",
       "OpenTelemetry >= 1.14.0"
     ]
   },
@@ -860,6 +1023,21 @@
       "net10.0": {
         "targetAlias": "net10.0",
         "dependencies": {
+          "Divino.OperationResult": {
+            "target": "Package",
+            "version": "[4.0.1, )",
+            "versionCentrallyManaged": true
+          },
+          "LiteBus.Commands.Abstractions": {
+            "target": "Package",
+            "version": "[4.2.0, )",
+            "versionCentrallyManaged": true
+          },
+          "LiteBus.Queries.Abstractions": {
+            "target": "Package",
+            "version": "[4.2.0, )",
+            "versionCentrallyManaged": true
+          },
           "OpenTelemetry": {
             "target": "Package",
             "version": "[1.14.0, )",
@@ -872,11 +1050,21 @@
           "Asp.Versioning.OData": "8.2.0",
           "coverlet.collector": "6.0.4",
           "coverlet.msbuild": "6.0.4",
+          "Divino.OperationResult": "4.0.1",
+          "LiteBus": "4.2.0",
+          "LiteBus.Commands": "4.2.0",
+          "LiteBus.Commands.Abstractions": "4.2.0",
+          "LiteBus.Commands.Extensions.Microsoft.DependencyInjection": "4.2.0",
+          "LiteBus.Events.Extensions.Microsoft.DependencyInjection": "4.2.0",
+          "LiteBus.Extensions.Microsoft.DependencyInjection": "4.2.0",
+          "LiteBus.Queries.Abstractions": "4.2.0",
+          "LiteBus.Queries.Extensions.Microsoft.DependencyInjection": "4.2.0",
           "Microsoft.AspNetCore.HeaderPropagation": "10.0.1",
           "Microsoft.AspNetCore.JsonPatch.SystemTextJson": "10.0.1",
           "Microsoft.AspNetCore.Mvc.Testing": "10.0.0",
           "Microsoft.AspNetCore.OData": "9.4.1",
           "Microsoft.AspNetCore.OpenApi": "10.0.1",
+          "Microsoft.Extensions.Http": "10.0.1",
           "Microsoft.Extensions.Http.Resilience": "10.1.0",
           "Microsoft.NET.Test.Sdk": "18.0.1",
           "NSubstitute": "5.3.0",

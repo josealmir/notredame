@@ -11,8 +11,8 @@
         "NotredameApm__TraceUri": "http://localhost:4000",
         "NotredameApm__LogUri": "http://localhost:4000",
         "NotredameApm__MetricsUri": "http://localhost:4000",
-        "BrasilCep__BaseUrl": "https://brasilapi.com.br/api/cep/v2/",
-        "ViaCep__BaseUrl": "https://viacep.com.br/ws/",
+        "BrasilCep__BaseUrl": "https://brasilapi.com.br/",
+        "ViaCep__BaseUrl": "https://viacep.com.br/",
         "HostClient": "http://localhost:3000"
       }
     }

@@ -29,8 +29,7 @@ public static class ApmNotredame
                         {
                             exportBuilder.Protocol = OtlpExportProtocol.Grpc;
                             exportBuilder.Endpoint = new Uri(apmOptions?.TraceUri ?? string.Empty);
-                        })
-                        .AddConsoleExporter();
+                        });
 
                 })
                 .WithMetrics((metricsBuilder) =>
@@ -44,8 +43,7 @@ public static class ApmNotredame
                         {
                             exportBuilder.Protocol = OtlpExportProtocol.Grpc;
                             exportBuilder.Endpoint = new Uri(apmOptions?.MetricsUri ?? string.Empty);
-                        })
-                        .AddConsoleExporter();
+                        });
                 })
                 .WithLogging((loggerBuilder) =>
                 {
