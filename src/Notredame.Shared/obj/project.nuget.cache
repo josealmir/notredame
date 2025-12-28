@@ -1,9 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "gKEl3a8HdMg=",
+  "dgSpecHash": "5+N5J0zUnPI=",
   "success": true,
   "projectFilePath": "/home/almir/Projetos/notredame/src/Notredame.Shared/Notredame.Shared.csproj",
   "expectedPackageFiles": [
+    "/home/almir/.nuget/packages/divino.operationresult/4.0.1/divino.operationresult.4.0.1.nupkg.sha512",
+    "/home/almir/.nuget/packages/litebus.commands.abstractions/4.2.0/litebus.commands.abstractions.4.2.0.nupkg.sha512",
+    "/home/almir/.nuget/packages/litebus.messaging.abstractions/4.2.0/litebus.messaging.abstractions.4.2.0.nupkg.sha512",
+    "/home/almir/.nuget/packages/litebus.queries.abstractions/4.2.0/litebus.queries.abstractions.4.2.0.nupkg.sha512",
+    "/home/almir/.nuget/packages/litebus.runtime.abstractions/4.2.0/litebus.runtime.abstractions.4.2.0.nupkg.sha512",
     "/home/almir/.nuget/packages/microsoft.extensions.configuration/10.0.0/microsoft.extensions.configuration.10.0.0.nupkg.sha512",
     "/home/almir/.nuget/packages/microsoft.extensions.configuration.abstractions/10.0.0/microsoft.extensions.configuration.abstractions.10.0.0.nupkg.sha512",
     "/home/almir/.nuget/packages/microsoft.extensions.configuration.binder/10.0.0/microsoft.extensions.configuration.binder.10.0.0.nupkg.sha512",

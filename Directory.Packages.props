@@ -4,15 +4,26 @@
     <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
   </PropertyGroup>
   <ItemGroup Label="AspNetCorePackages">
+    <PackageVersion Include="Divino.OperationResult" Version="4.0.1" />
+    <PackageVersion Include="Microsoft.Extensions.Http" Version="10.0.1" />
+    <PackageVersion Include="Polly" Version="8.6.5" />
     <PackageVersion Include="Asp.Versioning.Mvc" Version="8.1.0" />
     <PackageVersion Include="Asp.Versioning.Mvc.ApiExplorer" Version="8.1.0" />
     <PackageVersion Include="Asp.Versioning.OData" Version="8.2.0" />
+    <PackageVersion Include="LiteBus" Version="4.2.0" />
+    <PackageVersion Include="LiteBus.Commands" Version="4.2.0" />
+    <PackageVersion Include="LiteBus.Queries.Abstractions" Version="4.2.0" />
+    <PackageVersion Include="LiteBus.Commands.Abstractions" Version="4.2.0" />
+    <PackageVersion Include="LiteBus.Extensions.Microsoft.DependencyInjection" Version="4.2.0" />
+    <PackageVersion Include="LiteBus.Events.Extensions.Microsoft.DependencyInjection" Version="4.2.0" />
+    <PackageVersion Include="LiteBus.Queries.Extensions.Microsoft.DependencyInjection" Version="4.2.0" />
+    <PackageVersion Include="LiteBus.Commands.Extensions.Microsoft.DependencyInjection" Version="4.2.0" />
     <PackageVersion Include="Microsoft.AspNetCore.HeaderPropagation" Version="10.0.1" />
     <PackageVersion Include="Microsoft.AspNetCore.JsonPatch.SystemTextJson" Version="10.0.1" />
+    <PackageVersion Include="Scalar.AspNetCore" Version="2.11.10" />
     <PackageVersion Include="Microsoft.AspNetCore.OData" Version="9.4.1" />
     <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="10.0.1" />
     <PackageVersion Include="Microsoft.Extensions.Http.Resilience" Version="10.1.0" />
-    <PackageVersion Include="Scalar.AspNetCore" Version="2.11.10" />
   </ItemGroup>
   <ItemGroup Label="OpenTelemetryPackages">
     <PackageVersion Include="OpenTelemetry" Version="1.14.0" />
@@ -25,7 +36,6 @@
     <PackageVersion Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.14.0" />
     <PackageVersion Include="OpenTelemetry.Exporter.OpenTelemetryProtocol.Logs" Version="1.5.0-rc.1" />
     <PackageVersion Include="OpenTelemetry.Instrumentation.Runtime" Version="1.14.0" />
-    <PackageVersion Include="Polly" Version="8.6.5" />
   </ItemGroup>
   <ItemGroup Label="SerilogPackages">
     <PackageVersion Include="Serilog.AspNetCore" Version="10.0.0" />

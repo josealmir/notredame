@@ -31,7 +31,7 @@ public static class ClientHttpNotredame
                 .Get<BrasilCepOptionNotredame>() ?? 
                          new BrasilCepOptionNotredame();
             
-            services.AddHttpClient(ViaCepOptionNotredame.SectionName, client =>
+            services.AddHttpClient(BrasilCepOptionNotredame.SectionName, client =>
             {
                 client.BaseAddress = new Uri(bazilcep.BaseUrl);
             }).AddResilienceHandler("pipeline-brazil-cep", (builder, context) =>

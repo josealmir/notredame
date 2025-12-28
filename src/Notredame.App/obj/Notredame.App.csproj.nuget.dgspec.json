@@ -53,17 +53,34 @@
       "frameworks": {
         "net10.0": {
           "targetAlias": "net10.0",
+          "dependencies": {
+            "LiteBus": {
+              "target": "Package",
+              "version": "[4.2.0, )",
+              "versionCentrallyManaged": true
+            }
+          },
           "centralPackageVersions": {
             "Asp.Versioning.Mvc": "8.1.0",
             "Asp.Versioning.Mvc.ApiExplorer": "8.1.0",
             "Asp.Versioning.OData": "8.2.0",
             "coverlet.collector": "6.0.4",
             "coverlet.msbuild": "6.0.4",
+            "Divino.OperationResult": "4.0.1",
+            "LiteBus": "4.2.0",
+            "LiteBus.Commands": "4.2.0",
+            "LiteBus.Commands.Abstractions": "4.2.0",
+            "LiteBus.Commands.Extensions.Microsoft.DependencyInjection": "4.2.0",
+            "LiteBus.Events.Extensions.Microsoft.DependencyInjection": "4.2.0",
+            "LiteBus.Extensions.Microsoft.DependencyInjection": "4.2.0",
+            "LiteBus.Queries.Abstractions": "4.2.0",
+            "LiteBus.Queries.Extensions.Microsoft.DependencyInjection": "4.2.0",
             "Microsoft.AspNetCore.HeaderPropagation": "10.0.1",
             "Microsoft.AspNetCore.JsonPatch.SystemTextJson": "10.0.1",
             "Microsoft.AspNetCore.Mvc.Testing": "10.0.0",
             "Microsoft.AspNetCore.OData": "9.4.1",
             "Microsoft.AspNetCore.OpenApi": "10.0.1",
+            "Microsoft.Extensions.Http": "10.0.1",
             "Microsoft.Extensions.Http.Resilience": "10.1.0",
             "Microsoft.NET.Test.Sdk": "18.0.1",
             "NSubstitute": "5.3.0",
@@ -433,11 +450,21 @@
             "Asp.Versioning.OData": "8.2.0",
             "coverlet.collector": "6.0.4",
             "coverlet.msbuild": "6.0.4",
+            "Divino.OperationResult": "4.0.1",
+            "LiteBus": "4.2.0",
+            "LiteBus.Commands": "4.2.0",
+            "LiteBus.Commands.Abstractions": "4.2.0",
+            "LiteBus.Commands.Extensions.Microsoft.DependencyInjection": "4.2.0",
+            "LiteBus.Events.Extensions.Microsoft.DependencyInjection": "4.2.0",
+            "LiteBus.Extensions.Microsoft.DependencyInjection": "4.2.0",
+            "LiteBus.Queries.Abstractions": "4.2.0",
+            "LiteBus.Queries.Extensions.Microsoft.DependencyInjection": "4.2.0",
             "Microsoft.AspNetCore.HeaderPropagation": "10.0.1",
             "Microsoft.AspNetCore.JsonPatch.SystemTextJson": "10.0.1",
             "Microsoft.AspNetCore.Mvc.Testing": "10.0.0",
             "Microsoft.AspNetCore.OData": "9.4.1",
             "Microsoft.AspNetCore.OpenApi": "10.0.1",
+            "Microsoft.Extensions.Http": "10.0.1",
             "Microsoft.Extensions.Http.Resilience": "10.1.0",
             "Microsoft.NET.Test.Sdk": "18.0.1",
             "NSubstitute": "5.3.0",
@@ -802,6 +829,21 @@
         "net10.0": {
           "targetAlias": "net10.0",
           "dependencies": {
+            "Divino.OperationResult": {
+              "target": "Package",
+              "version": "[4.0.1, )",
+              "versionCentrallyManaged": true
+            },
+            "LiteBus.Commands.Abstractions": {
+              "target": "Package",
+              "version": "[4.2.0, )",
+              "versionCentrallyManaged": true
+            },
+            "LiteBus.Queries.Abstractions": {
+              "target": "Package",
+              "version": "[4.2.0, )",
+              "versionCentrallyManaged": true
+            },
             "OpenTelemetry": {
               "target": "Package",
               "version": "[1.14.0, )",
@@ -814,11 +856,21 @@
             "Asp.Versioning.OData": "8.2.0",
             "coverlet.collector": "6.0.4",
             "coverlet.msbuild": "6.0.4",
+            "Divino.OperationResult": "4.0.1",
+            "LiteBus": "4.2.0",
+            "LiteBus.Commands": "4.2.0",
+            "LiteBus.Commands.Abstractions": "4.2.0",
+            "LiteBus.Commands.Extensions.Microsoft.DependencyInjection": "4.2.0",
+            "LiteBus.Events.Extensions.Microsoft.DependencyInjection": "4.2.0",
+            "LiteBus.Extensions.Microsoft.DependencyInjection": "4.2.0",
+            "LiteBus.Queries.Abstractions": "4.2.0",
+            "LiteBus.Queries.Extensions.Microsoft.DependencyInjection": "4.2.0",
             "Microsoft.AspNetCore.HeaderPropagation": "10.0.1",
             "Microsoft.AspNetCore.JsonPatch.SystemTextJson": "10.0.1",
             "Microsoft.AspNetCore.Mvc.Testing": "10.0.0",
             "Microsoft.AspNetCore.OData": "9.4.1",
             "Microsoft.AspNetCore.OpenApi": "10.0.1",
+            "Microsoft.Extensions.Http": "10.0.1",
             "Microsoft.Extensions.Http.Resilience": "10.1.0",
             "Microsoft.NET.Test.Sdk": "18.0.1",
             "NSubstitute": "5.3.0",

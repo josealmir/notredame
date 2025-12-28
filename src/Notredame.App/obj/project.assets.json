@@ -2,6 +2,187 @@
   "version": 3,
   "targets": {
     "net10.0": {
+      "Divino.OperationResult/4.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/OperationResult.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/OperationResult.dll": {}
+        }
+      },
+      "LiteBus/4.2.0": {
+        "type": "package",
+        "dependencies": {
+          "LiteBus.Commands": "4.2.0",
+          "LiteBus.Commands.Abstractions": "4.2.0",
+          "LiteBus.Events": "4.2.0",
+          "LiteBus.Events.Abstractions": "4.2.0",
+          "LiteBus.Messaging": "4.2.0",
+          "LiteBus.Messaging.Abstractions": "4.2.0",
+          "LiteBus.Queries": "4.2.0",
+          "LiteBus.Queries.Abstractions": "4.2.0"
+        },
+        "compile": {
+          "lib/net10.0/LiteBus.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/LiteBus.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
+      "LiteBus.Commands/4.2.0": {
+        "type": "package",
+        "dependencies": {
+          "LiteBus.Commands.Abstractions": "4.2.0",
+          "LiteBus.Messaging": "4.2.0",
+          "LiteBus.Runtime.Abstractions": "4.2.0"
+        },
+        "compile": {
+          "lib/net10.0/LiteBus.Commands.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/LiteBus.Commands.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
+      "LiteBus.Commands.Abstractions/4.2.0": {
+        "type": "package",
+        "dependencies": {
+          "LiteBus.Messaging.Abstractions": "4.2.0"
+        },
+        "compile": {
+          "lib/net10.0/LiteBus.Commands.Abstractions.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/LiteBus.Commands.Abstractions.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
+      "LiteBus.Events/4.2.0": {
+        "type": "package",
+        "dependencies": {
+          "LiteBus.Events.Abstractions": "4.2.0",
+          "LiteBus.Messaging": "4.2.0",
+          "LiteBus.Messaging.Abstractions": "4.2.0",
+          "LiteBus.Runtime.Abstractions": "4.2.0"
+        },
+        "compile": {
+          "lib/net10.0/LiteBus.Events.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/LiteBus.Events.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
+      "LiteBus.Events.Abstractions/4.2.0": {
+        "type": "package",
+        "dependencies": {
+          "LiteBus.Messaging.Abstractions": "4.2.0"
+        },
+        "compile": {
+          "lib/net10.0/LiteBus.Events.Abstractions.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/LiteBus.Events.Abstractions.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
+      "LiteBus.Messaging/4.2.0": {
+        "type": "package",
+        "dependencies": {
+          "LiteBus.Messaging.Abstractions": "4.2.0",
+          "LiteBus.Runtime.Abstractions": "4.2.0"
+        },
+        "compile": {
+          "lib/net10.0/LiteBus.Messaging.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/LiteBus.Messaging.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
+      "LiteBus.Messaging.Abstractions/4.2.0": {
+        "type": "package",
+        "dependencies": {
+          "LiteBus.Runtime.Abstractions": "4.2.0"
+        },
+        "compile": {
+          "lib/net10.0/LiteBus.Messaging.Abstractions.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/LiteBus.Messaging.Abstractions.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
+      "LiteBus.Queries/4.2.0": {
+        "type": "package",
+        "dependencies": {
+          "LiteBus.Messaging": "4.2.0",
+          "LiteBus.Queries.Abstractions": "4.2.0",
+          "LiteBus.Runtime.Abstractions": "4.2.0"
+        },
+        "compile": {
+          "lib/net10.0/LiteBus.Queries.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/LiteBus.Queries.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
+      "LiteBus.Queries.Abstractions/4.2.0": {
+        "type": "package",
+        "dependencies": {
+          "LiteBus.Messaging.Abstractions": "4.2.0"
+        },
+        "compile": {
+          "lib/net10.0/LiteBus.Queries.Abstractions.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/LiteBus.Queries.Abstractions.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
+      "LiteBus.Runtime.Abstractions/4.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/LiteBus.Runtime.Abstractions.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/LiteBus.Runtime.Abstractions.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
       "Microsoft.Extensions.Configuration/10.0.0": {
         "type": "package",
         "dependencies": {
@@ -303,6 +484,9 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
+          "Divino.OperationResult": "4.0.1",
+          "LiteBus.Commands.Abstractions": "4.2.0",
+          "LiteBus.Queries.Abstractions": "4.2.0",
           "OpenTelemetry": "1.14.0"
         },
         "compile": {
@@ -315,6 +499,210 @@
     }
   },
   "libraries": {
+    "Divino.OperationResult/4.0.1": {
+      "sha512": "gUsjqTI9eimsk/K232P90buwE5O6s+dMIof/Fi2Ymj0CczGh561bQmL52RsWgTnBRx2dsj+5SjUOmBY4RfYP7A==",
+      "type": "package",
+      "path": "divino.operationresult/4.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "divino.operationresult.4.0.1.nupkg.sha512",
+        "divino.operationresult.nuspec",
+        "lib/net6.0/OperationResult.dll",
+        "lib/net7.0/OperationResult.dll",
+        "lib/net8.0/OperationResult.dll"
+      ]
+    },
+    "LiteBus/4.2.0": {
+      "sha512": "7Lhl7FvtoPyFLjt2GU0oIQw9aaT4x3zooTWqe7KOGG3t0DbYyYZ4YQo2ashfevqcZ4+ayoRroFEq/DJD5LPt0A==",
+      "type": "package",
+      "path": "litebus/4.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "icon.png",
+        "lib/net10.0/LiteBus.dll",
+        "lib/net10.0/LiteBus.pdb",
+        "lib/net8.0/LiteBus.dll",
+        "lib/net8.0/LiteBus.pdb",
+        "lib/net9.0/LiteBus.dll",
+        "lib/net9.0/LiteBus.pdb",
+        "litebus.4.2.0.nupkg.sha512",
+        "litebus.nuspec"
+      ]
+    },
+    "LiteBus.Commands/4.2.0": {
+      "sha512": "EjQP57pcUNKYpXD4iTqC7ElMOWRk3GrCbvsZ7MeLOFli8b9VqhoBC+6Sy3RbaikTc1js1nvVguH30D4/d++06g==",
+      "type": "package",
+      "path": "litebus.commands/4.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "icon.png",
+        "lib/net10.0/LiteBus.Commands.dll",
+        "lib/net10.0/LiteBus.Commands.pdb",
+        "lib/net8.0/LiteBus.Commands.dll",
+        "lib/net8.0/LiteBus.Commands.pdb",
+        "lib/net9.0/LiteBus.Commands.dll",
+        "lib/net9.0/LiteBus.Commands.pdb",
+        "litebus.commands.4.2.0.nupkg.sha512",
+        "litebus.commands.nuspec"
+      ]
+    },
+    "LiteBus.Commands.Abstractions/4.2.0": {
+      "sha512": "B44JPEeGAxDooTGfvk/4mLgh+5OwfFfd8jbVaJgoWhK0j9czuxHqMt/qijF3nxM6PZ+7Wi0qx1eLtJUlba+viw==",
+      "type": "package",
+      "path": "litebus.commands.abstractions/4.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "icon.png",
+        "lib/net10.0/LiteBus.Commands.Abstractions.dll",
+        "lib/net10.0/LiteBus.Commands.Abstractions.pdb",
+        "lib/net8.0/LiteBus.Commands.Abstractions.dll",
+        "lib/net8.0/LiteBus.Commands.Abstractions.pdb",
+        "lib/net9.0/LiteBus.Commands.Abstractions.dll",
+        "lib/net9.0/LiteBus.Commands.Abstractions.pdb",
+        "litebus.commands.abstractions.4.2.0.nupkg.sha512",
+        "litebus.commands.abstractions.nuspec"
+      ]
+    },
+    "LiteBus.Events/4.2.0": {
+      "sha512": "rNLXVWbBRhAbv/OM2nR37AAQox0h4gATyAzao2hsPbkKIOGUWWRBSk4aHDgTqAsApp0aD3wekFiVE1yiRWt4JQ==",
+      "type": "package",
+      "path": "litebus.events/4.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "icon.png",
+        "lib/net10.0/LiteBus.Events.dll",
+        "lib/net10.0/LiteBus.Events.pdb",
+        "lib/net8.0/LiteBus.Events.dll",
+        "lib/net8.0/LiteBus.Events.pdb",
+        "lib/net9.0/LiteBus.Events.dll",
+        "lib/net9.0/LiteBus.Events.pdb",
+        "litebus.events.4.2.0.nupkg.sha512",
+        "litebus.events.nuspec"
+      ]
+    },
+    "LiteBus.Events.Abstractions/4.2.0": {
+      "sha512": "NxP3ebMepXDFwZm7CHBX0uEwarCwr0N+RXWbBPMwrT8M2s0E+eegKj8sqMzeFqtBuExvR9cIAbjnzoBmrohF0g==",
+      "type": "package",
+      "path": "litebus.events.abstractions/4.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "icon.png",
+        "lib/net10.0/LiteBus.Events.Abstractions.dll",
+        "lib/net10.0/LiteBus.Events.Abstractions.pdb",
+        "lib/net8.0/LiteBus.Events.Abstractions.dll",
+        "lib/net8.0/LiteBus.Events.Abstractions.pdb",
+        "lib/net9.0/LiteBus.Events.Abstractions.dll",
+        "lib/net9.0/LiteBus.Events.Abstractions.pdb",
+        "litebus.events.abstractions.4.2.0.nupkg.sha512",
+        "litebus.events.abstractions.nuspec"
+      ]
+    },
+    "LiteBus.Messaging/4.2.0": {
+      "sha512": "yJUY1LiNIl2jhJXRHR+I5cTMgR/af8PSF0ZdYFcwVqLToKOanvuDjNpgemj8L2EEycdep+e+LbYKfZqaWqlx7Q==",
+      "type": "package",
+      "path": "litebus.messaging/4.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "icon.png",
+        "lib/net10.0/LiteBus.Messaging.dll",
+        "lib/net10.0/LiteBus.Messaging.pdb",
+        "lib/net8.0/LiteBus.Messaging.dll",
+        "lib/net8.0/LiteBus.Messaging.pdb",
+        "lib/net9.0/LiteBus.Messaging.dll",
+        "lib/net9.0/LiteBus.Messaging.pdb",
+        "litebus.messaging.4.2.0.nupkg.sha512",
+        "litebus.messaging.nuspec"
+      ]
+    },
+    "LiteBus.Messaging.Abstractions/4.2.0": {
+      "sha512": "vKNbAMWpD3Zd/cJLAVNooyegOLB3zIDAmfLTICxJLaAUlpIc9Xv2M1+6scrj9low5umIVASZxYFcSMH7gEZIRw==",
+      "type": "package",
+      "path": "litebus.messaging.abstractions/4.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "icon.png",
+        "lib/net10.0/LiteBus.Messaging.Abstractions.dll",
+        "lib/net10.0/LiteBus.Messaging.Abstractions.pdb",
+        "lib/net8.0/LiteBus.Messaging.Abstractions.dll",
+        "lib/net8.0/LiteBus.Messaging.Abstractions.pdb",
+        "lib/net9.0/LiteBus.Messaging.Abstractions.dll",
+        "lib/net9.0/LiteBus.Messaging.Abstractions.pdb",
+        "litebus.messaging.abstractions.4.2.0.nupkg.sha512",
+        "litebus.messaging.abstractions.nuspec"
+      ]
+    },
+    "LiteBus.Queries/4.2.0": {
+      "sha512": "hIaUAWDc5LzkiDCX54KAnvyNNMhAIzERm+qMAfJAq6cgzmUB5d1gZkqsLsdRFbAbMBTtW0aISE6ctUNry3U30w==",
+      "type": "package",
+      "path": "litebus.queries/4.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "icon.png",
+        "lib/net10.0/LiteBus.Queries.dll",
+        "lib/net10.0/LiteBus.Queries.pdb",
+        "lib/net8.0/LiteBus.Queries.dll",
+        "lib/net8.0/LiteBus.Queries.pdb",
+        "lib/net9.0/LiteBus.Queries.dll",
+        "lib/net9.0/LiteBus.Queries.pdb",
+        "litebus.queries.4.2.0.nupkg.sha512",
+        "litebus.queries.nuspec"
+      ]
+    },
+    "LiteBus.Queries.Abstractions/4.2.0": {
+      "sha512": "UJ+5miM7yQ8gmnBF84jBYucFd1uvfQPpPw9N+y1ZhqU8hqmuPvGFcKO02QNqOXCtx934dij+/XVWPv0c3UXtqQ==",
+      "type": "package",
+      "path": "litebus.queries.abstractions/4.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "icon.png",
+        "lib/net10.0/LiteBus.Queries.Abstractions.dll",
+        "lib/net10.0/LiteBus.Queries.Abstractions.pdb",
+        "lib/net8.0/LiteBus.Queries.Abstractions.dll",
+        "lib/net8.0/LiteBus.Queries.Abstractions.pdb",
+        "lib/net9.0/LiteBus.Queries.Abstractions.dll",
+        "lib/net9.0/LiteBus.Queries.Abstractions.pdb",
+        "litebus.queries.abstractions.4.2.0.nupkg.sha512",
+        "litebus.queries.abstractions.nuspec"
+      ]
+    },
+    "LiteBus.Runtime.Abstractions/4.2.0": {
+      "sha512": "dEwJgQsiqiM/OWWhTOXIKwvsphdWjCsfhBY0oVjVXPmrKc8kpwCl71QaHFN89lGYnjbffQwfJ6+pYs5iayam2g==",
+      "type": "package",
+      "path": "litebus.runtime.abstractions/4.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "icon.png",
+        "lib/net10.0/LiteBus.Runtime.Abstractions.dll",
+        "lib/net10.0/LiteBus.Runtime.Abstractions.pdb",
+        "lib/net8.0/LiteBus.Runtime.Abstractions.dll",
+        "lib/net8.0/LiteBus.Runtime.Abstractions.pdb",
+        "lib/net9.0/LiteBus.Runtime.Abstractions.dll",
+        "lib/net9.0/LiteBus.Runtime.Abstractions.pdb",
+        "litebus.runtime.abstractions.4.2.0.nupkg.sha512",
+        "litebus.runtime.abstractions.nuspec"
+      ]
+    },
     "Microsoft.Extensions.Configuration/10.0.0": {
       "sha512": "H4SWETCh/cC5L1WtWchHR6LntGk3rDTTznZMssr4cL8IbDmMWBxY+MOGDc/ASnqNolLKPIWHWeuC1ddiL/iNPw==",
       "type": "package",
@@ -844,6 +1232,7 @@
   },
   "projectFileDependencyGroups": {
     "net10.0": [
+      "LiteBus >= 4.2.0",
       "Notredame.Domain >= 1.0.0",
       "Notredame.Shared >= 1.0.0"
     ]
@@ -900,17 +1289,34 @@
     "frameworks": {
       "net10.0": {
         "targetAlias": "net10.0",
+        "dependencies": {
+          "LiteBus": {
+            "target": "Package",
+            "version": "[4.2.0, )",
+            "versionCentrallyManaged": true
+          }
+        },
         "centralPackageVersions": {
           "Asp.Versioning.Mvc": "8.1.0",
           "Asp.Versioning.Mvc.ApiExplorer": "8.1.0",
           "Asp.Versioning.OData": "8.2.0",
           "coverlet.collector": "6.0.4",
           "coverlet.msbuild": "6.0.4",
+          "Divino.OperationResult": "4.0.1",
+          "LiteBus": "4.2.0",
+          "LiteBus.Commands": "4.2.0",
+          "LiteBus.Commands.Abstractions": "4.2.0",
+          "LiteBus.Commands.Extensions.Microsoft.DependencyInjection": "4.2.0",
+          "LiteBus.Events.Extensions.Microsoft.DependencyInjection": "4.2.0",
+          "LiteBus.Extensions.Microsoft.DependencyInjection": "4.2.0",
+          "LiteBus.Queries.Abstractions": "4.2.0",
+          "LiteBus.Queries.Extensions.Microsoft.DependencyInjection": "4.2.0",
           "Microsoft.AspNetCore.HeaderPropagation": "10.0.1",
           "Microsoft.AspNetCore.JsonPatch.SystemTextJson": "10.0.1",
           "Microsoft.AspNetCore.Mvc.Testing": "10.0.0",
           "Microsoft.AspNetCore.OData": "9.4.1",
           "Microsoft.AspNetCore.OpenApi": "10.0.1",
+          "Microsoft.Extensions.Http": "10.0.1",
           "Microsoft.Extensions.Http.Resilience": "10.1.0",
           "Microsoft.NET.Test.Sdk": "18.0.1",
           "NSubstitute": "5.3.0",
@@ -1234,6 +1640,22 @@
   },
   "centralTransitiveDependencyGroups": {
     "net10.0": {
+      "Divino.OperationResult": {
+        "include": "Runtime, Compile, Native, BuildTransitive",
+        "version": "[4.0.1, )"
+      },
+      "LiteBus.Commands": {
+        "include": "Runtime, Compile, Native, BuildTransitive",
+        "version": "[4.2.0, )"
+      },
+      "LiteBus.Commands.Abstractions": {
+        "include": "Runtime, Compile, Native, BuildTransitive",
+        "version": "[4.2.0, )"
+      },
+      "LiteBus.Queries.Abstractions": {
+        "include": "Runtime, Compile, Native, BuildTransitive",
+        "version": "[4.2.0, )"
+      },
       "OpenTelemetry": {
         "include": "Runtime, Compile, Native, BuildTransitive",
         "version": "[1.14.0, )"

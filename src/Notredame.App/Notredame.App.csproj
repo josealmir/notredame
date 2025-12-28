@@ -1,14 +1,16 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <RootNamespace>Notredame.App</RootNamespace>
+    </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\Notredame.Domain\Notredame.Domain.csproj" />
     <ProjectReference Include="..\Notredame.Shared\Notredame.Shared.csproj" />
   </ItemGroup>
 
-  <PropertyGroup>
-    <TargetFramework>net10.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
-
+  <ItemGroup>
+    <PackageReference Include="LiteBus" />
+  </ItemGroup>
 </Project>
