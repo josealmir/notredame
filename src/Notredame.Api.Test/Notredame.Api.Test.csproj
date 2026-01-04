@@ -12,4 +12,7 @@
         <PackageReference Include="Microsoft.NET.Test.Sdk" />
         <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" />
     </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\Notredame.Api\Notredame.Api.csproj" />
+    </ItemGroup>
 </Project>

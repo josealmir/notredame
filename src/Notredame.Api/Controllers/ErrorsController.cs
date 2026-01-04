@@ -1,5 +1,4 @@
 using System.Net;
-
 using Asp.Versioning;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;

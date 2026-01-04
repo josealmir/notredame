@@ -29,8 +29,8 @@
 [Bb]uild/
 bld/
 [Bb]in/
+[obj]/
 [Oo]bj/
-
 # Visual Studio 2015 cache/options directory
 .vs/
 coverageOutput/
@@ -50,6 +50,7 @@ StrykerOutput/
 *.VisualState.xml
 *.idea
 # Build Results of an ATL Project
+[obj]/
 [Dd]ebugPS/
 [Rr]eleasePS/
 dlldata.c

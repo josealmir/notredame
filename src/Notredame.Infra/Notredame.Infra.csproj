@@ -6,16 +6,14 @@
         <RootNamespace>Notredame.Infra</RootNamespace>
     </PropertyGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Notredame.App\Notredame.App.csproj" />
     <ProjectReference Include="..\Notredame.Domain\Notredame.Domain.csproj" />
     <ProjectReference Include="..\Notredame.Shared\Notredame.Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="LiteBus.Queries.Abstractions" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" />
     <PackageReference Include="Microsoft.Extensions.Http" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Data\" />
   </ItemGroup>
 </Project>

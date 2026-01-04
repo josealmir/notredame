@@ -40,6 +40,6 @@ public readonly partial record struct Cep
         => new (cep);
     
     [GeneratedRegex(@"^\d{5}-?\d{3}$")]
-    private static partial Regex CepRegex();
+    public static partial Regex CepRegex();
 }
 

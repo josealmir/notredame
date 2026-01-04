@@ -15,6 +15,5 @@ public static class NotredameResource
 
     public static ResourceBuilder Instance
         => ResourceBuilder.CreateDefault()
-            .AddService(serviceName: ServiceName, serviceVersion: ServiceVersion)
-            .AddTelemetrySdk();
+            .AddService(serviceName: ServiceName, serviceVersion: ServiceVersion);
 }

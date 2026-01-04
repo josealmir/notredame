@@ -15,15 +15,15 @@ namespace Notredame.Domain.Test;
 
 public sealed class QueryCepHandlerTest
 {
-    private readonly QueryCepHandle _queryCepHandle;
-    private readonly ILogger<QueryCepHandle> _logger;
+    private readonly QueryCepHandler _queryCepHandler;
+    private readonly ILogger<QueryCepHandler> _logger;
     private readonly ICepService _cepService;
     
     public QueryCepHandlerTest()
     {
         _cepService = Substitute.For<ICepService>();
-        _logger =  Substitute.For<ILogger<QueryCepHandle>>();
-        _queryCepHandle = new QueryCepHandle( _logger, _cepService);
+        _logger =  Substitute.For<ILogger<QueryCepHandler>>();
+        _queryCepHandler = new QueryCepHandler( _logger, _cepService);
     }
 
     [Theory]
@@ -36,7 +36,7 @@ public sealed class QueryCepHandlerTest
        _cepService.SearchCepAsync(request.Cep).Returns( new CepDTO(request.Cep, "Fortaleza","Messeja","Ceara","5689",ProviderCep.Brazilapi, new LocationDTO()));
        
        // Action
-       var result = await _queryCepHandle.HandleAsync(request);
+       var result = await _queryCepHandler.HandleAsync(request);
        
        // Assert
        result.Value.ShouldBeNull();
@@ -52,7 +52,7 @@ public sealed class QueryCepHandlerTest
         var request = new QueryCep(cep);
         
         // Action
-        var result = await _queryCepHandle.HandleAsync(request);   
+        var result = await _queryCepHandler.HandleAsync(request);   
         
         // Assert
         result.Exception.ShouldBeOfType<InvalidCepException>();
@@ -67,7 +67,7 @@ public sealed class QueryCepHandlerTest
         _cepService.SearchCepAsync(request.Cep)!.Returns(Task.FromResult<CepDTO>(null!));
         
         // Action
-        var result = await _queryCepHandle.HandleAsync(request);   
+        var result = await _queryCepHandler.HandleAsync(request);   
         
         // Assert
         result.Exception.ShouldBeOfType<BusinessNotredameException>();

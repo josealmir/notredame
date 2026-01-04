@@ -11,6 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentValidation" />
     <PackageReference Include="LiteBus" />
+    <PackageReference Include="Mapster" />
   </ItemGroup>
 </Project>

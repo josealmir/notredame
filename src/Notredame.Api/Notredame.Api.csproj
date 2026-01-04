@@ -17,6 +17,8 @@
     <PackageReference Include="Asp.Versioning.Mvc.ApiExplorer" />
     <PackageReference Include="Asp.Versioning.OData" />
     <PackageReference Include="Divino.OperationResult" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" />
+    <PackageReference Include="Mapster.DependencyInjection" />
     <PackageReference Include="Microsoft.AspNetCore.HeaderPropagation" />
     <PackageReference Include="Microsoft.AspNetCore.JsonPatch.SystemTextJson" />
     <PackageReference Include="Microsoft.AspNetCore.OData" />
@@ -32,6 +34,7 @@
     <PackageReference Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" />
     <PackageReference Include="OpenTelemetry.Instrumentation.Runtime" />
     <PackageReference Include="Polly" />
+    <PackageReference Include="prometheus-net.AspNetCore" />
     <PackageReference Include="Scalar.AspNetCore" />
     <PackageReference Include="Serilog.AspNetCore" />
     <PackageReference Include="Serilog.Enrichers.CorrelationId" />
@@ -45,5 +48,9 @@
     <PackageReference Include="LiteBus.Events.Extensions.Microsoft.DependencyInjection" />
     <PackageReference Include="LiteBus.Queries.Extensions.Microsoft.DependencyInjection" />
     <PackageReference Include="LiteBus.Commands.Extensions.Microsoft.DependencyInjection" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="http-client.env.json" />
   </ItemGroup>
 </Project>

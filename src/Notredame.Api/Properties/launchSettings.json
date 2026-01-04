@@ -5,12 +5,14 @@
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": false,
-      "applicationUrl": "http://localhost:5001",
+      "applicationUrl": "http://localhost:5010",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "NotredameApm__TraceUri": "http://localhost:4000",
-        "NotredameApm__LogUri": "http://localhost:4000",
-        "NotredameApm__MetricsUri": "http://localhost:4000",
+        "OTEL_EXPORTER_OTLP_ENDPOINT": "http://otelcollector.docker.localhost:4317",
+        "OTEL_EXPORTER_OTLP_PROTOCOL": "grpc",
+        "NotredameApm__TraceUri": "http://otelcollector.docker.localhost:4317",
+        "NotredameApm__LogUri": "http://otelcollector.docker.localhost:4317",
+        "NotredameApm__MetricsUri": "http://otelcollector.docker.localhost:4317",
         "BrasilCep__BaseUrl": "https://brasilapi.com.br/",
         "ViaCep__BaseUrl": "https://viacep.com.br/",
         "HostClient": "http://localhost:3000"

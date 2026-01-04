@@ -1,7 +1,7 @@
 
 namespace Notredame.Domain.Exceptions;
 
-public abstract class InvalidRequestException : DomainException
+public class InvalidRequestException : DomainException
 {
     public InvalidRequestException(string message) : base(message)
     { }

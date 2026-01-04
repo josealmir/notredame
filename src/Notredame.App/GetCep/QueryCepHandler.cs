@@ -9,8 +9,8 @@ using Cep = Notredame.Domain.VOs.Cep;
 
 namespace Notredame.App.GetCep;
 
-public class QueryCepHandle(
-    ILogger<QueryCepHandle> logger,
+public sealed class QueryCepHandler(
+    ILogger<QueryCepHandler> logger,
     ICepService cepService):
     IQueryHandler<QueryCep, Result<CepDTO>>
 {

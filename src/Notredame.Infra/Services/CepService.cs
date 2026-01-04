@@ -38,7 +38,6 @@ public sealed class CepService(
     {
         var httpClient = httpClientFactory.CreateClient(BrasilCepOptionNotredame.SectionName);
         var response = await httpClient.GetFromJsonAsync<BrazilApiResponse>($"api/cep/v2/{cep}", cancellationToken);
-        
         return response;
     }
 }
