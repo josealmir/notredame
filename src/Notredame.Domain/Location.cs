@@ -1,7 +1,13 @@
+using Notredame.Domain.Commons;
+using Notredame.Domain.DTOs;
+
 namespace Notredame.Domain;
 
-public class Location
+public class Location : Entity
 {
-    public double Latitude { get; set; }
-    public double Longitude { get; set; }
+    public double Lat { get; set; }
+    
+    public double Lon { get; set; }
+
+    public LocationDTO Map() => new LocationDTO() { Lat = Lat, Lon = Lon, };
 }

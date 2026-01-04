@@ -1,7 +1,9 @@
 using System.Net;
+using FluentValidation;
 using LiteBus.Commands.Abstractions;
 using LiteBus.Queries.Abstractions;
 using Microsoft.AspNetCore.Mvc;
+using Notredame.Api.Extensions;
 using Notredame.Domain.Exceptions;
 using Notredame.Shared.Infra;
 
@@ -25,10 +27,10 @@ public abstract class BaseController: ControllerBase
             (false, _, var error) => TreatErrorQuery(error),
         };
 
-    protected async Task<IActionResult> HandlePostAsync<T>(ICommandBus<T> request)
+    protected async Task<IActionResult> HandleCreatedAsync(ICommandBus<(string Location, object Model)> request)
         => await _commandMediator.SendAsync(request) switch
         {
-            (true, var result) => Created("", result),
+            (true, var result) => Created(result.Location, result.Model),
             (false, _ ,var error) => TreatErrorCommand(error),
             _ => throw new ArgumentOutOfRangeException()
         };
@@ -42,7 +44,7 @@ public abstract class BaseController: ControllerBase
         };
 
     [NonAction]
-    private ObjectResult TreatErrorQuery(Exception? error)
+    private IActionResult TreatErrorQuery(Exception? error)
         => error switch
         {   
             InvalidRequestException e => Problem(detail: e.Message, statusCode: (int)HttpStatusCode.BadRequest),
@@ -52,10 +54,10 @@ public abstract class BaseController: ControllerBase
         };
     
     [NonAction]
-    public ObjectResult TreatErrorCommand(Exception? error)
+    private IActionResult TreatErrorCommand(Exception? error)
         => error switch
         {   
-            InvalidRequestException e => Problem(detail: error.Message, statusCode: (int)HttpStatusCode.BadRequest),
+            ValidationException e => ValidationProblem(modelStateDictionary: e.Errors.ToModalState(ModelState)),
             DomainException e => Problem(detail: error.Message, statusCode: (int)HttpStatusCode.UnprocessableEntity),
             not null => Problem(detail: error.Message),
             _ => throw new ArgumentOutOfRangeException(nameof(error), error, null)

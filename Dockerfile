@@ -22,13 +22,13 @@ RUN for file in $(ls *.csproj); do mkdir -p src/${file%.*}/ && mv $file src/${fi
 
 RUN dotnet restore
 COPY . .
-WORKDIR "/src/src/notredame.Api"
-RUN dotnet build "notredame.Api.csproj" -c Release -o /app/build
+WORKDIR "/src/src/Notredame.Api"
+RUN dotnet build "Notredame.Api.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "notredame.Api.csproj" -c Release -o /app/publish
+RUN dotnet publish "Notredame.Api.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "notredame.Api.dll"]
+ENTRYPOINT ["dotnet", "Notredame.Api.dll"]

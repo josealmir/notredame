@@ -1,18 +1,26 @@
-using System.Diagnostics;
 using System.Text.Json;
+using System.Diagnostics;
 using System.Text.Json.Serialization;
 
-using Notredame.Api.Settings;
-using Notredame.Data;
-using Notredame.Shared;
+using FluentValidation;
+
 using Scalar.AspNetCore;
+using Notredame.Infra;
+using Notredame.Shared;
+using Notredame.Api.Settings;
 using Serilog;
+using Mapster;
+using MapsterMapper;
+
+using Notredame.App;
+
+using Prometheus;
+
 using Serilog.Enrichers.Span;
 using Serilog.Formatting.Compact;
 
-
 var builder = WebApplication.CreateBuilder(args);
-
+/*
 builder.Host.UseSerilog((context, services, configuration) =>
 {
     configuration
@@ -26,9 +34,9 @@ builder.Host.UseSerilog((context, services, configuration) =>
         .Filter.ByExcluding(x => x.Properties.Any(p => p.Value.ToString().StartsWith("/swagger")))
         .Filter.ByExcluding(x => x.Properties.Any(p => p.Value.ToString().StartsWith("/metric")))
         .WriteTo.Console(new CompactJsonFormatter())
-        .Enrich.FromLogContext();
+        .Enrich.FromLogContext() ;
 });
-
+*/
 // Add services to the container.
 
 builder.Services
@@ -42,16 +50,22 @@ builder.Services
        });
 
 builder.Services
-        .AddEndpointsApiExplorer();
+     .AddEndpointsApiExplorer();
 
 builder.Services
-        .AddHealthChecks();
+     .AddHealthChecks();
 
 builder.Services
-        .AddHeaderPropagation()
-        .AddHttpContextAccessor()
-        .AddHttpClientViaCep(builder.Configuration)
-        .AddHttpClientBrazilCep(builder.Configuration);
+    .AddHeaderPropagation()
+    .AddHttpContextAccessor()
+    .AddHttpClientViaCep(builder.Configuration)
+    .AddHttpClientBrazilCep(builder.Configuration);
+
+builder.Services
+    .AddMapster();
+
+builder.Services
+    .AddValidatorsFromAssemblyContaining<AssemblyScanApp>();
 
 builder.Services
         .AddProblemDetails(options =>
@@ -63,16 +77,17 @@ builder.Services
             };
         });
 
-builder.Services
-       .AddApiVersionNotredame();
+builder.Services.AddDiNotredame();
 
 builder.Services
+    .AddApiVersionNotredame()
+    .AddDbContextNotredame()
     .AddLitebusNotredame()
     .AddOptionsNotredame()
-    .AddApmNotredame(builder.Configuration)
     .AddCorsNotredame(builder.Configuration)
-    .AddDiNotredame();
+    .UseHttpClientMetrics();
 
+builder.UseApmNotredame();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -97,13 +112,15 @@ app.UseCors();
 
 app.UseStatusCodePages();
 
-app.UseSerilogRequestLogging();
-
+// app.UseSerilogRequestLogging();
+app.UseMetricServer();
+app.MapPrometheusScrapingEndpoint();
 app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapHealthChecks("/hc");
 
 app.MapControllers();
+app.MapMetrics();
 
 app.Run();

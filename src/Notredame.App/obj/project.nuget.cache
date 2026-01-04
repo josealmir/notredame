@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "L/cDOqZxTwM=",
+  "dgSpecHash": "Zx27g/WYNYg=",
   "success": true,
   "projectFilePath": "/home/almir/Projetos/notredame/src/Notredame.App/Notredame.App.csproj",
   "expectedPackageFiles": [
     "/home/almir/.nuget/packages/divino.operationresult/4.0.1/divino.operationresult.4.0.1.nupkg.sha512",
+    "/home/almir/.nuget/packages/fluentvalidation/12.1.1/fluentvalidation.12.1.1.nupkg.sha512",
     "/home/almir/.nuget/packages/litebus/4.2.0/litebus.4.2.0.nupkg.sha512",
     "/home/almir/.nuget/packages/litebus.commands/4.2.0/litebus.commands.4.2.0.nupkg.sha512",
     "/home/almir/.nuget/packages/litebus.commands.abstractions/4.2.0/litebus.commands.abstractions.4.2.0.nupkg.sha512",
@@ -15,6 +16,8 @@
     "/home/almir/.nuget/packages/litebus.queries/4.2.0/litebus.queries.4.2.0.nupkg.sha512",
     "/home/almir/.nuget/packages/litebus.queries.abstractions/4.2.0/litebus.queries.abstractions.4.2.0.nupkg.sha512",
     "/home/almir/.nuget/packages/litebus.runtime.abstractions/4.2.0/litebus.runtime.abstractions.4.2.0.nupkg.sha512",
+    "/home/almir/.nuget/packages/mapster/7.4.0/mapster.7.4.0.nupkg.sha512",
+    "/home/almir/.nuget/packages/mapster.core/1.2.1/mapster.core.1.2.1.nupkg.sha512",
     "/home/almir/.nuget/packages/microsoft.extensions.configuration/10.0.0/microsoft.extensions.configuration.10.0.0.nupkg.sha512",
     "/home/almir/.nuget/packages/microsoft.extensions.configuration.abstractions/10.0.0/microsoft.extensions.configuration.abstractions.10.0.0.nupkg.sha512",
     "/home/almir/.nuget/packages/microsoft.extensions.configuration.binder/10.0.0/microsoft.extensions.configuration.binder.10.0.0.nupkg.sha512",

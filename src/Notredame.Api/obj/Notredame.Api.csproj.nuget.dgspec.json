@@ -62,22 +62,27 @@
           "dependencies": {
             "Asp.Versioning.Mvc": {
               "target": "Package",
-              "version": "[8.1.0, )",
+              "version": "[8.1.1, )",
               "versionCentrallyManaged": true
             },
             "Asp.Versioning.Mvc.ApiExplorer": {
               "target": "Package",
-              "version": "[8.1.0, )",
+              "version": "[8.1.1, )",
               "versionCentrallyManaged": true
             },
             "Asp.Versioning.OData": {
               "target": "Package",
-              "version": "[8.2.0, )",
+              "version": "[8.2.1, )",
               "versionCentrallyManaged": true
             },
             "Divino.OperationResult": {
               "target": "Package",
               "version": "[4.0.1, )",
+              "versionCentrallyManaged": true
+            },
+            "FluentValidation.DependencyInjectionExtensions": {
+              "target": "Package",
+              "version": "[12.1.1, )",
               "versionCentrallyManaged": true
             },
             "LiteBus.Commands.Extensions.Microsoft.DependencyInjection": {
@@ -98,6 +103,11 @@
             "LiteBus.Queries.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
               "version": "[4.2.0, )",
+              "versionCentrallyManaged": true
+            },
+            "Mapster.DependencyInjection": {
+              "target": "Package",
+              "version": "[1.0.1, )",
               "versionCentrallyManaged": true
             },
             "Microsoft.AspNetCore.HeaderPropagation": {
@@ -142,7 +152,7 @@
             },
             "OpenTelemetry.Exporter.Prometheus.AspNetCore": {
               "target": "Package",
-              "version": "[1.12.0-beta.1, )",
+              "version": "[1.14.0-beta.1, )",
               "versionCentrallyManaged": true
             },
             "OpenTelemetry.Extensions.Hosting": {
@@ -219,15 +229,22 @@
               "target": "Package",
               "version": "[6.1.1, )",
               "versionCentrallyManaged": true
+            },
+            "prometheus-net.AspNetCore": {
+              "target": "Package",
+              "version": "[8.2.1, )",
+              "versionCentrallyManaged": true
             }
           },
           "centralPackageVersions": {
-            "Asp.Versioning.Mvc": "8.1.0",
-            "Asp.Versioning.Mvc.ApiExplorer": "8.1.0",
-            "Asp.Versioning.OData": "8.2.0",
+            "Asp.Versioning.Mvc": "8.1.1",
+            "Asp.Versioning.Mvc.ApiExplorer": "8.1.1",
+            "Asp.Versioning.OData": "8.2.1",
             "coverlet.collector": "6.0.4",
             "coverlet.msbuild": "6.0.4",
             "Divino.OperationResult": "4.0.1",
+            "FluentValidation": "12.1.1",
+            "FluentValidation.DependencyInjectionExtensions": "12.1.1",
             "LiteBus": "4.2.0",
             "LiteBus.Commands": "4.2.0",
             "LiteBus.Commands.Abstractions": "4.2.0",
@@ -236,11 +253,14 @@
             "LiteBus.Extensions.Microsoft.DependencyInjection": "4.2.0",
             "LiteBus.Queries.Abstractions": "4.2.0",
             "LiteBus.Queries.Extensions.Microsoft.DependencyInjection": "4.2.0",
+            "Mapster": "7.4.0",
+            "Mapster.DependencyInjection": "1.0.1",
             "Microsoft.AspNetCore.HeaderPropagation": "10.0.1",
             "Microsoft.AspNetCore.JsonPatch.SystemTextJson": "10.0.1",
             "Microsoft.AspNetCore.Mvc.Testing": "10.0.0",
             "Microsoft.AspNetCore.OData": "9.4.1",
             "Microsoft.AspNetCore.OpenApi": "10.0.1",
+            "Microsoft.EntityFrameworkCore.InMemory": "10.0.1",
             "Microsoft.Extensions.Http": "10.0.1",
             "Microsoft.Extensions.Http.Resilience": "10.1.0",
             "Microsoft.NET.Test.Sdk": "18.0.1",
@@ -249,13 +269,14 @@
             "OpenTelemetry.Exporter.Console": "1.14.0",
             "OpenTelemetry.Exporter.OpenTelemetryProtocol": "1.14.0",
             "OpenTelemetry.Exporter.OpenTelemetryProtocol.Logs": "1.5.0-rc.1",
-            "OpenTelemetry.Exporter.Prometheus.AspNetCore": "1.12.0-beta.1",
+            "OpenTelemetry.Exporter.Prometheus.AspNetCore": "1.14.0-beta.1",
             "OpenTelemetry.Extensions.Hosting": "1.14.0",
             "OpenTelemetry.Instrumentation.AspNetCore": "1.14.0",
             "OpenTelemetry.Instrumentation.EntityFrameworkCore": "1.12.0-beta.2",
             "OpenTelemetry.Instrumentation.Http": "1.14.0",
             "OpenTelemetry.Instrumentation.Runtime": "1.14.0",
             "Polly": "8.6.5",
+            "prometheus-net.AspNetCore": "8.2.1",
             "Scalar.AspNetCore": "2.11.10",
             "Serilog.AspNetCore": "10.0.0",
             "Serilog.Enrichers.CorrelationId": "3.0.1",
@@ -756,19 +777,31 @@
         "net10.0": {
           "targetAlias": "net10.0",
           "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[12.1.1, )",
+              "versionCentrallyManaged": true
+            },
             "LiteBus": {
               "target": "Package",
               "version": "[4.2.0, )",
               "versionCentrallyManaged": true
+            },
+            "Mapster": {
+              "target": "Package",
+              "version": "[7.4.0, )",
+              "versionCentrallyManaged": true
             }
           },
           "centralPackageVersions": {
-            "Asp.Versioning.Mvc": "8.1.0",
-            "Asp.Versioning.Mvc.ApiExplorer": "8.1.0",
-            "Asp.Versioning.OData": "8.2.0",
+            "Asp.Versioning.Mvc": "8.1.1",
+            "Asp.Versioning.Mvc.ApiExplorer": "8.1.1",
+            "Asp.Versioning.OData": "8.2.1",
             "coverlet.collector": "6.0.4",
             "coverlet.msbuild": "6.0.4",
             "Divino.OperationResult": "4.0.1",
+            "FluentValidation": "12.1.1",
+            "FluentValidation.DependencyInjectionExtensions": "12.1.1",
             "LiteBus": "4.2.0",
             "LiteBus.Commands": "4.2.0",
             "LiteBus.Commands.Abstractions": "4.2.0",
@@ -777,11 +810,14 @@
             "LiteBus.Extensions.Microsoft.DependencyInjection": "4.2.0",
             "LiteBus.Queries.Abstractions": "4.2.0",
             "LiteBus.Queries.Extensions.Microsoft.DependencyInjection": "4.2.0",
+            "Mapster": "7.4.0",
+            "Mapster.DependencyInjection": "1.0.1",
             "Microsoft.AspNetCore.HeaderPropagation": "10.0.1",
             "Microsoft.AspNetCore.JsonPatch.SystemTextJson": "10.0.1",
             "Microsoft.AspNetCore.Mvc.Testing": "10.0.0",
             "Microsoft.AspNetCore.OData": "9.4.1",
             "Microsoft.AspNetCore.OpenApi": "10.0.1",
+            "Microsoft.EntityFrameworkCore.InMemory": "10.0.1",
             "Microsoft.Extensions.Http": "10.0.1",
             "Microsoft.Extensions.Http.Resilience": "10.1.0",
             "Microsoft.NET.Test.Sdk": "18.0.1",
@@ -790,13 +826,14 @@
             "OpenTelemetry.Exporter.Console": "1.14.0",
             "OpenTelemetry.Exporter.OpenTelemetryProtocol": "1.14.0",
             "OpenTelemetry.Exporter.OpenTelemetryProtocol.Logs": "1.5.0-rc.1",
-            "OpenTelemetry.Exporter.Prometheus.AspNetCore": "1.12.0-beta.1",
+            "OpenTelemetry.Exporter.Prometheus.AspNetCore": "1.14.0-beta.1",
             "OpenTelemetry.Extensions.Hosting": "1.14.0",
             "OpenTelemetry.Instrumentation.AspNetCore": "1.14.0",
             "OpenTelemetry.Instrumentation.EntityFrameworkCore": "1.12.0-beta.2",
             "OpenTelemetry.Instrumentation.Http": "1.14.0",
             "OpenTelemetry.Instrumentation.Runtime": "1.14.0",
             "Polly": "8.6.5",
+            "prometheus-net.AspNetCore": "8.2.1",
             "Scalar.AspNetCore": "2.11.10",
             "Serilog.AspNetCore": "10.0.0",
             "Serilog.Enrichers.CorrelationId": "3.0.1",
@@ -1147,12 +1184,14 @@
         "net10.0": {
           "targetAlias": "net10.0",
           "centralPackageVersions": {
-            "Asp.Versioning.Mvc": "8.1.0",
-            "Asp.Versioning.Mvc.ApiExplorer": "8.1.0",
-            "Asp.Versioning.OData": "8.2.0",
+            "Asp.Versioning.Mvc": "8.1.1",
+            "Asp.Versioning.Mvc.ApiExplorer": "8.1.1",
+            "Asp.Versioning.OData": "8.2.1",
             "coverlet.collector": "6.0.4",
             "coverlet.msbuild": "6.0.4",
             "Divino.OperationResult": "4.0.1",
+            "FluentValidation": "12.1.1",
+            "FluentValidation.DependencyInjectionExtensions": "12.1.1",
             "LiteBus": "4.2.0",
             "LiteBus.Commands": "4.2.0",
             "LiteBus.Commands.Abstractions": "4.2.0",
@@ -1161,11 +1200,14 @@
             "LiteBus.Extensions.Microsoft.DependencyInjection": "4.2.0",
             "LiteBus.Queries.Abstractions": "4.2.0",
             "LiteBus.Queries.Extensions.Microsoft.DependencyInjection": "4.2.0",
+            "Mapster": "7.4.0",
+            "Mapster.DependencyInjection": "1.0.1",
             "Microsoft.AspNetCore.HeaderPropagation": "10.0.1",
             "Microsoft.AspNetCore.JsonPatch.SystemTextJson": "10.0.1",
             "Microsoft.AspNetCore.Mvc.Testing": "10.0.0",
             "Microsoft.AspNetCore.OData": "9.4.1",
             "Microsoft.AspNetCore.OpenApi": "10.0.1",
+            "Microsoft.EntityFrameworkCore.InMemory": "10.0.1",
             "Microsoft.Extensions.Http": "10.0.1",
             "Microsoft.Extensions.Http.Resilience": "10.1.0",
             "Microsoft.NET.Test.Sdk": "18.0.1",
@@ -1174,13 +1216,14 @@
             "OpenTelemetry.Exporter.Console": "1.14.0",
             "OpenTelemetry.Exporter.OpenTelemetryProtocol": "1.14.0",
             "OpenTelemetry.Exporter.OpenTelemetryProtocol.Logs": "1.5.0-rc.1",
-            "OpenTelemetry.Exporter.Prometheus.AspNetCore": "1.12.0-beta.1",
+            "OpenTelemetry.Exporter.Prometheus.AspNetCore": "1.14.0-beta.1",
             "OpenTelemetry.Extensions.Hosting": "1.14.0",
             "OpenTelemetry.Instrumentation.AspNetCore": "1.14.0",
             "OpenTelemetry.Instrumentation.EntityFrameworkCore": "1.12.0-beta.2",
             "OpenTelemetry.Instrumentation.Http": "1.14.0",
             "OpenTelemetry.Instrumentation.Runtime": "1.14.0",
             "Polly": "8.6.5",
+            "prometheus-net.AspNetCore": "8.2.1",
             "Scalar.AspNetCore": "2.11.10",
             "Serilog.AspNetCore": "10.0.0",
             "Serilog.Enrichers.CorrelationId": "3.0.1",
@@ -1513,6 +1556,9 @@
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
+              "/home/almir/Projetos/notredame/src/Notredame.App/Notredame.App.csproj": {
+                "projectPath": "/home/almir/Projetos/notredame/src/Notredame.App/Notredame.App.csproj"
+              },
               "/home/almir/Projetos/notredame/src/Notredame.Domain/Notredame.Domain.csproj": {
                 "projectPath": "/home/almir/Projetos/notredame/src/Notredame.Domain/Notredame.Domain.csproj"
               },
@@ -1543,6 +1589,11 @@
               "version": "[4.2.0, )",
               "versionCentrallyManaged": true
             },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[10.0.1, )",
+              "versionCentrallyManaged": true
+            },
             "Microsoft.Extensions.Http": {
               "target": "Package",
               "version": "[10.0.1, )",
@@ -1550,12 +1601,14 @@
             }
           },
           "centralPackageVersions": {
-            "Asp.Versioning.Mvc": "8.1.0",
-            "Asp.Versioning.Mvc.ApiExplorer": "8.1.0",
-            "Asp.Versioning.OData": "8.2.0",
+            "Asp.Versioning.Mvc": "8.1.1",
+            "Asp.Versioning.Mvc.ApiExplorer": "8.1.1",
+            "Asp.Versioning.OData": "8.2.1",
             "coverlet.collector": "6.0.4",
             "coverlet.msbuild": "6.0.4",
             "Divino.OperationResult": "4.0.1",
+            "FluentValidation": "12.1.1",
+            "FluentValidation.DependencyInjectionExtensions": "12.1.1",
             "LiteBus": "4.2.0",
             "LiteBus.Commands": "4.2.0",
             "LiteBus.Commands.Abstractions": "4.2.0",
@@ -1564,11 +1617,14 @@
             "LiteBus.Extensions.Microsoft.DependencyInjection": "4.2.0",
             "LiteBus.Queries.Abstractions": "4.2.0",
             "LiteBus.Queries.Extensions.Microsoft.DependencyInjection": "4.2.0",
+            "Mapster": "7.4.0",
+            "Mapster.DependencyInjection": "1.0.1",
             "Microsoft.AspNetCore.HeaderPropagation": "10.0.1",
             "Microsoft.AspNetCore.JsonPatch.SystemTextJson": "10.0.1",
             "Microsoft.AspNetCore.Mvc.Testing": "10.0.0",
             "Microsoft.AspNetCore.OData": "9.4.1",
             "Microsoft.AspNetCore.OpenApi": "10.0.1",
+            "Microsoft.EntityFrameworkCore.InMemory": "10.0.1",
             "Microsoft.Extensions.Http": "10.0.1",
             "Microsoft.Extensions.Http.Resilience": "10.1.0",
             "Microsoft.NET.Test.Sdk": "18.0.1",
@@ -1577,13 +1633,14 @@
             "OpenTelemetry.Exporter.Console": "1.14.0",
             "OpenTelemetry.Exporter.OpenTelemetryProtocol": "1.14.0",
             "OpenTelemetry.Exporter.OpenTelemetryProtocol.Logs": "1.5.0-rc.1",
-            "OpenTelemetry.Exporter.Prometheus.AspNetCore": "1.12.0-beta.1",
+            "OpenTelemetry.Exporter.Prometheus.AspNetCore": "1.14.0-beta.1",
             "OpenTelemetry.Extensions.Hosting": "1.14.0",
             "OpenTelemetry.Instrumentation.AspNetCore": "1.14.0",
             "OpenTelemetry.Instrumentation.EntityFrameworkCore": "1.12.0-beta.2",
             "OpenTelemetry.Instrumentation.Http": "1.14.0",
             "OpenTelemetry.Instrumentation.Runtime": "1.14.0",
             "Polly": "8.6.5",
+            "prometheus-net.AspNetCore": "8.2.1",
             "Scalar.AspNetCore": "2.11.10",
             "Serilog.AspNetCore": "10.0.0",
             "Serilog.Enrichers.CorrelationId": "3.0.1",
@@ -1956,12 +2013,14 @@
             }
           },
           "centralPackageVersions": {
-            "Asp.Versioning.Mvc": "8.1.0",
-            "Asp.Versioning.Mvc.ApiExplorer": "8.1.0",
-            "Asp.Versioning.OData": "8.2.0",
+            "Asp.Versioning.Mvc": "8.1.1",
+            "Asp.Versioning.Mvc.ApiExplorer": "8.1.1",
+            "Asp.Versioning.OData": "8.2.1",
             "coverlet.collector": "6.0.4",
             "coverlet.msbuild": "6.0.4",
             "Divino.OperationResult": "4.0.1",
+            "FluentValidation": "12.1.1",
+            "FluentValidation.DependencyInjectionExtensions": "12.1.1",
             "LiteBus": "4.2.0",
             "LiteBus.Commands": "4.2.0",
             "LiteBus.Commands.Abstractions": "4.2.0",
@@ -1970,11 +2029,14 @@
             "LiteBus.Extensions.Microsoft.DependencyInjection": "4.2.0",
             "LiteBus.Queries.Abstractions": "4.2.0",
             "LiteBus.Queries.Extensions.Microsoft.DependencyInjection": "4.2.0",
+            "Mapster": "7.4.0",
+            "Mapster.DependencyInjection": "1.0.1",
             "Microsoft.AspNetCore.HeaderPropagation": "10.0.1",
             "Microsoft.AspNetCore.JsonPatch.SystemTextJson": "10.0.1",
             "Microsoft.AspNetCore.Mvc.Testing": "10.0.0",
             "Microsoft.AspNetCore.OData": "9.4.1",
             "Microsoft.AspNetCore.OpenApi": "10.0.1",
+            "Microsoft.EntityFrameworkCore.InMemory": "10.0.1",
             "Microsoft.Extensions.Http": "10.0.1",
             "Microsoft.Extensions.Http.Resilience": "10.1.0",
             "Microsoft.NET.Test.Sdk": "18.0.1",
@@ -1983,13 +2045,14 @@
             "OpenTelemetry.Exporter.Console": "1.14.0",
             "OpenTelemetry.Exporter.OpenTelemetryProtocol": "1.14.0",
             "OpenTelemetry.Exporter.OpenTelemetryProtocol.Logs": "1.5.0-rc.1",
-            "OpenTelemetry.Exporter.Prometheus.AspNetCore": "1.12.0-beta.1",
+            "OpenTelemetry.Exporter.Prometheus.AspNetCore": "1.14.0-beta.1",
             "OpenTelemetry.Extensions.Hosting": "1.14.0",
             "OpenTelemetry.Instrumentation.AspNetCore": "1.14.0",
             "OpenTelemetry.Instrumentation.EntityFrameworkCore": "1.12.0-beta.2",
             "OpenTelemetry.Instrumentation.Http": "1.14.0",
             "OpenTelemetry.Instrumentation.Runtime": "1.14.0",
             "Polly": "8.6.5",
+            "prometheus-net.AspNetCore": "8.2.1",
             "Scalar.AspNetCore": "2.11.10",
             "Serilog.AspNetCore": "10.0.0",
             "Serilog.Enrichers.CorrelationId": "3.0.1",
