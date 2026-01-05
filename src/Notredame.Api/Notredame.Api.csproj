@@ -49,8 +49,4 @@
     <PackageReference Include="LiteBus.Queries.Extensions.Microsoft.DependencyInjection" />
     <PackageReference Include="LiteBus.Commands.Extensions.Microsoft.DependencyInjection" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Content Remove="http-client.env.json" />
-  </ItemGroup>
 </Project>

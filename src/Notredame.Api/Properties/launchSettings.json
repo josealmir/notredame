@@ -9,7 +9,6 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
         "OTEL_EXPORTER_OTLP_ENDPOINT": "http://otelcollector.docker.localhost:4317",
-        "OTEL_EXPORTER_OTLP_PROTOCOL": "grpc",
         "NotredameApm__TraceUri": "http://otelcollector.docker.localhost:4317",
         "NotredameApm__LogUri": "http://otelcollector.docker.localhost:4317",
         "NotredameApm__MetricsUri": "http://otelcollector.docker.localhost:4317",
