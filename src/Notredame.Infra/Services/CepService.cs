@@ -19,7 +19,7 @@ public sealed class CepService(
             {
                 return await ApiBrazilAsync(cep);
             }
-            catch(HttpRequestException ex)
+            catch(Exception ex)
             {
                 logger.LogError(ex.Message, ex);
                 return await ApiViaCepAsync(cep);

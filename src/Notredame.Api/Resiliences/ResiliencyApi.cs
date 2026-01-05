@@ -40,7 +40,7 @@ public static class ResiliencyApi
                 }
             });
 
-            builder.AddTimeout(TimeSpan.FromSeconds(5));
+            builder.AddTimeout(TimeSpan.FromSeconds(10));
             builder.AddCircuitBreaker(new CircuitBreakerStrategyOptions<HttpResponseMessage>
             {
                 FailureRatio = 0.5,
