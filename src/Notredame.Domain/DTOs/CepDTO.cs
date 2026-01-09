@@ -18,5 +18,5 @@ public record CepDTO: CepAbstract
                location)  
             { }
     public static bool IsValid(CepDTO? dto)
-        => dto != null || !string.IsNullOrWhiteSpace(dto.ZipCode);
+        => dto != null && !string.IsNullOrWhiteSpace(dto?.ZipCode);
 }
