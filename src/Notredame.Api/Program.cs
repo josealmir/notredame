@@ -84,7 +84,6 @@ builder.Services
     .UseHttpClientMetrics();
 builder.Services.Configure<ForwardedHeadersOptions>(options =>
 {
-    //https://learn.microsoft.com/en-us/azure/container-apps/dotnet-overview#define-x-forwarded-headers
     options.ForwardedHeaders =
         ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
     options.KnownIPNetworks.Clear();
@@ -93,8 +92,6 @@ builder.Services.Configure<ForwardedHeadersOptions>(options =>
 
 builder.UseApmNotredame();
 var app = builder.Build();
-
-// Configure the HTTP request pipeline.
 
 if (!app.Environment.IsProduction())
 {
@@ -107,7 +104,7 @@ if (!app.Environment.IsProduction())
 app.UseExceptionHandler("/error");
 
 app.UseHttpsRedirection();
-
+// app.UseHttpLogging(zp´)
 app.UseHeaderPropagation();
 
 app.UseRequestLocalization();
@@ -117,15 +114,16 @@ app.UseCors();
 
 app.UseStatusCodePages();
 
-// app.UseSerilogRequestLogging();
 app.UseMetricServer();
 app.MapPrometheusScrapingEndpoint();
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.MapHealthChecks("/hc");
+app.MapHealthChecks("/hc")
+   .AllowAnonymous();
+app.MapMetrics()
+   .AllowAnonymous();
 
 app.MapControllers();
-app.MapMetrics();
 
 app.Run();

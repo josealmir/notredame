@@ -17,11 +17,12 @@ public sealed class CepService(
         {
             try
             {
+                
                 return await ApiBrazilAsync(cep);
             }
             catch(Exception ex)
             {
-                logger.LogError(ex.Message, ex);
+                logger.LogError(ex.Message, ex.GetType().FullName, ex.StackTrace);
                 return await ApiViaCepAsync(cep);
             }   
         }

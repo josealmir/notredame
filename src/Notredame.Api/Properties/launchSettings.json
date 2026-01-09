@@ -9,9 +9,6 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
         "OTEL_EXPORTER_OTLP_ENDPOINT": "http://otelcollector.docker.localhost:4317",
-        "NotredameApm__TraceUri": "http://otelcollector.docker.localhost:4317",
-        "NotredameApm__LogUri": "http://otelcollector.docker.localhost:4317",
-        "NotredameApm__MetricsUri": "http://otelcollector.docker.localhost:4317",
         "BrasilCep__BaseUrl": "https://brasilapi.com.br/",
         "ViaCep__BaseUrl": "https://viacep.com.br/",
         "HostClient": "http://localhost:3000"

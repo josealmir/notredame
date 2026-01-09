@@ -1,7 +1,7 @@
+using System.Text.Encodings.Web;
+
 using Notredame.Shared;
-using Notredame.Shared.Options;
 using OpenTelemetry;
-using OpenTelemetry.Logs;
 using OpenTelemetry.Trace;
 using OpenTelemetry.Metrics;
 using OpenTelemetry.Resources;
@@ -14,7 +14,6 @@ public static class ApmNotredame
     {
         public WebApplicationBuilder UseApmNotredame()
         {
-            // var apmOptions = builder.Configuration.GetRequiredSection(NotredameApmOption.SectionName).Get<NotredameApmOption>() ?? null;
             builder.Services.AddOpenTelemetry()
                 .WithTracing(tracingBuilder =>
                 {
@@ -45,7 +44,13 @@ public static class ApmNotredame
                         options.IncludeScopes = true; 
                         options.IncludeFormattedMessage = true;
                     })
-                    .AddJsonConsole();
+                    .AddJsonConsole(options =>
+                    {
+                        options.JsonWriterOptions = new()
+                        {
+                            Indented = false, Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+                        };
+                    });
             });
 
             return builder;
