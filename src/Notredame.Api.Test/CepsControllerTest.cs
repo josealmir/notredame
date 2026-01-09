@@ -1,5 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Notredame.App.CreateCep;
 using System.Text.Json;
+using System.Net.Mime;
+using System.Text;
 using System.Net;
 using Shouldly;
 using Xunit;
@@ -60,6 +63,22 @@ public class CepsControllerTest : IClassFixture<ApplicationFactory<Program>>
         // Assert
         response.StatusCode.ShouldBe(HttpStatusCode.GatewayTimeout);
         var problem = JsonSerializer.Deserialize<ProblemDetails>(await response.Content.ReadAsStringAsync());
+        problem.ShouldNotBeNull();
+    }
+
+    [Fact]
+    public async Task PostInCepsWithZipCodeInvalid_ShouldReturnBadRequest()
+    {
+        // Arrange
+        var request = new CepCommand { ZipCode = "0064" };
+        var content = new StringContent(JsonSerializer.Serialize(request), Encoding.UTF8, MediaTypeNames.Application.Json);
+        
+        // Act
+        var response = await _client.PostAsync("/api/v1/ceps", content);
+        
+        // Assert
+        response.StatusCode.ShouldBe(HttpStatusCode.BadRequest);
+        var problem = JsonSerializer.Deserialize<ValidationProblemDetails>(await response.Content.ReadAsStringAsync());
         problem.ShouldNotBeNull();
     }
 }
