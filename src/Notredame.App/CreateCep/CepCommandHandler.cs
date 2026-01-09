@@ -30,7 +30,7 @@ public sealed class CepCommandHandler(
                 return  Result.Error<(string, object)>(exception);
 
             var cep = await cepService.SearchCepAsync(message.ZipCode);
-            if (CepDTO.IsValid(cep))
+            if (!CepDTO.IsValid(cep))
                 return Result.Error<(string, object)>(new BusinessNotredameException("Not found cep")); 
 
             var entity = mapper.Map<Domain.Cep>(cep);
