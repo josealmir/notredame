@@ -10,8 +10,12 @@
  ``` bash 
   ➜ docker run --env-file .env -p 80:80 notredame-api
  ```
- #### Access Api doc
+ #### Access Api
+  - locahost:
   http://localhost:5010/scalar
+  - web
+  https://notredame-api.onrender.com/scalar/
+
 #### Used in App 
 
 
