@@ -6,6 +6,7 @@ using Notredame.Domain.Services;
 using Notredame.Domain.Exceptions;
 using Microsoft.Extensions.Logging;
 using Notredame.Domain.Commons;
+using Notredame.Domain.DTOs;
 using Notredame.Domain.Repositories;
 
 namespace Notredame.App.CreateCep;
@@ -29,7 +30,7 @@ public sealed class CepCommandHandler(
                 return  Result.Error<(string, object)>(exception);
 
             var cep = await cepService.SearchCepAsync(message.ZipCode);
-            if (cep is null)
+            if (CepDTO.IsValid(cep))
                 return Result.Error<(string, object)>(new BusinessNotredameException("Not found cep")); 
 
             var entity = mapper.Map<Domain.Cep>(cep);
