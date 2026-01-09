@@ -14,7 +14,7 @@ public static class ApmNotredame
     {
         public WebApplicationBuilder UseApmNotredame()
         {
-            var apmOptions = builder.Configuration.GetRequiredSection(NotredameApmOption.SectionName).Get<NotredameApmOption>() ?? null;
+            // var apmOptions = builder.Configuration.GetRequiredSection(NotredameApmOption.SectionName).Get<NotredameApmOption>() ?? null;
             builder.Services.AddOpenTelemetry()
                 .WithTracing(tracingBuilder =>
                 {
