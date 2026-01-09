@@ -7,12 +7,7 @@ public static class OptionsNotredame
     extension(IServiceCollection services)
     {
         public IServiceCollection AddOptionsNotredame()
-        {
-            services.AddOptions<NotredameApmOption>()
-                .BindConfiguration(NotredameApmOption.SectionName)
-                .ValidateDataAnnotations()
-                .ValidateOnStart();
-            
+        {            
             services.AddOptions<BrasilCepOptionNotredame>()
                 .BindConfiguration(BrasilCepOptionNotredame.SectionName)
                 .ValidateDataAnnotations()
