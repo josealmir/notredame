@@ -3,6 +3,8 @@ using LiteBus.Commands.Abstractions;
 using LiteBus.Queries.Abstractions;
 using Microsoft.AspNetCore.Mvc;
 using Notredame.App.CreateCep;
+using Notredame.App.DeleteCep;
+using Notredame.App.GetById;
 using Notredame.App.GetCep;
 using Notredame.Domain.DTOs;
 
@@ -23,15 +25,21 @@ public class CepsController(
     public async Task<IActionResult> GetAsync(string cep)
         => await HandleGetAsync(new QueryCep(cep));
     
-    [HttpGet("{id:Guid}")]
+    [HttpGet("{externalId:Guid}")]
     [ProducesResponseType<CepDTO>(StatusCodes.Status200OK )]
     [ProducesResponseType<ProblemDetails>(StatusCodes.Status404NotFound)]
-    public async Task<IActionResult> GetById(Guid id)
-        =>  await HandleGetAsync(new QueryCep("s"));
+    public async Task<IActionResult> GetByIdAsync(Guid externalId)
+        =>  await HandleGetAsync(new QueryByIdCep(externalId));
     
     [HttpPost]
     [ProducesResponseType<CepCreatedDTO>(StatusCodes.Status201Created)]
     [ProducesResponseType<ValidationProblemDetails>(StatusCodes.Status400BadRequest)]
     public async Task<IActionResult> PostAsync(CepCommand cepCommand)
         => await HandleCreatedAsync(cepCommand);
+
+    [HttpDelete("{externalId:Guid}")]
+    [ProducesResponseType<CepCreatedDTO>(StatusCodes.Status200OK)]
+    [ProducesResponseType<ProblemDetails>(StatusCodes.Status400BadRequest)]
+    public async Task<IActionResult> DeleteAsync(Guid externalId)
+        => await HandleRequestAsync(new DeleteCepCommand(externalId));
 }

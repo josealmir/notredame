@@ -5,12 +5,12 @@ using Notredame.App.CreateCep;
 
 namespace Notredame.Domain.Test.CreateCep;
 
-public sealed class CepCommandValidationTest
+public sealed class CepCommandValidatorTest
 {
-    private readonly CepCommandValidation _validator;
+    private readonly CepCommandValidator _validator;
 
-    public CepCommandValidationTest()
-        => _validator = new CepCommandValidation();
+    public CepCommandValidatorTest()
+        => _validator = new CepCommandValidator();
 
     [Fact]
     public void WhenZipcodeIsValid_ShouldNotHaveError()

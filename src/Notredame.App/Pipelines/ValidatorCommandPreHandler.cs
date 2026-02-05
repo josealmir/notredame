@@ -3,12 +3,8 @@ using LiteBus.Commands.Abstractions;
 using LiteBus.Messaging.Abstractions;
 using LiteBus.Messaging.Extensions;
 using Microsoft.Extensions.Logging;
-using OperationResult;
-using FluentValidation;
-using LiteBus.Commands;
 
 namespace Notredame.App.Pipelines;
-
 
 public sealed class ValidatorCommandPreHandler(
     ILogger<ValidatorCommandPreHandler> logger,
@@ -28,12 +24,13 @@ public sealed class ValidatorCommandPreHandler(
             var result = await validator.ValidateAsync(validatorContext, cancellationToken); 
             if (!result.IsValid)
             {
+                
                 logger.LogWarning("Validation failed for {Command} is {result}", request.GetType().Name, result.IsValid);
-                AmbientExecutionContext.Current.MessageResult = new ValidationException(result.Errors);
-                return;
+                var response = CommandBusExtension.CreateErrorResult(request.GetTypeResult(), new ValidationException(result.Errors)); 
+                AmbientExecutionContext.Current.Abort(response);
             }
             
-            logger.LogWarning("Validation failed for {Command} is {result}", request.GetType().Name, result.IsValid);
+            logger.LogWarning("Validation Success for {Command} is {result}", request.GetType().Name, result.IsValid);
         }
     }
 }

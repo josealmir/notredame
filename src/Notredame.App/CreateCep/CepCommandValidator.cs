@@ -4,9 +4,9 @@ using Notredame.Domain.VOs;
 
 namespace Notredame.App.CreateCep;
 
-public class CepCommandValidation : AbstractValidator<CepCommand>
+public class CepCommandValidator : AbstractValidator<CepCommand>
 {
-    public CepCommandValidation()
+    public CepCommandValidator()
     {
         RuleFor(x=> x.ZipCode)
             .NotEmpty()

@@ -5,6 +5,8 @@ using OperationResult;
 using Notredame.Domain.Services;
 using Notredame.Domain.Exceptions;
 using Microsoft.Extensions.Logging;
+
+using Notredame.Domain;
 using Notredame.Domain.Commons;
 using Notredame.Domain.DTOs;
 using Notredame.Domain.Repositories;
@@ -16,7 +18,6 @@ public sealed class CepCommandHandler(
         IMapper mapper,
         ICepRepository repository,
         IUnitOfWork unitOfWork,
-        IEnvironmentExecution<Exception> environment,
         ILogger<CepCommandHandler> logger)
         : ICommandHandler<CepCommand, Result<(string, object)>>
 {
@@ -26,14 +27,14 @@ public sealed class CepCommandHandler(
     {
         using (logger.BeginScope(new Dictionary<string, object> { { "zipCode", message.ZipCode } }))
         {
-            if (environment?.MessageResult is ValidationException exception)
-                return  Result.Error<(string, object)>(exception);
-
+            ArgumentNullException.ThrowIfNull(message);
+            
             var cep = await cepService.SearchCepAsync(message.ZipCode);
             if (!CepDTO.IsValid(cep))
                 return Result.Error<(string, object)>(new BusinessNotredameException("Not found cep")); 
 
             var entity = mapper.Map<Domain.Cep>(cep);
+            entity.Location = new Location { CepId = entity.Id, Lat = entity.Location.Lat, Lon = entity.Location.Lon };
             
             await repository.AddAsync(entity);
             await unitOfWork.CommitAsync(cancellationToken);

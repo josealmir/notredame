@@ -36,7 +36,6 @@ public sealed class CepCommandHandlerTest
             _mapper,
             _repository,
             _unitOfWork,
-            _environment,
             _logger
         );
     }

@@ -15,6 +15,8 @@ using Serilog.Enrichers.Span;
 using Serilog.Formatting.Compact;
 using Microsoft.AspNetCore.HttpOverrides;
 
+using Notredame.Api.Builders;
+
 var builder = WebApplication.CreateBuilder(args);
 /*
 builder.Host.UseSerilog((context, services, configuration) =>
@@ -101,6 +103,9 @@ if (!app.Environment.IsProduction())
     app.MapScalarApiReference();
     app.MapGet("/", () => "/scalar");
 }
+
+app.UseApplyMigrations();
+
 app.UseExceptionHandler("/error");
 
 app.UseHttpsRedirection();
