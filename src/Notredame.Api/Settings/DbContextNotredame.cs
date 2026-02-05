@@ -11,7 +11,8 @@ public static class DbContextNotredame
         {
             services.AddDbContextPool<AppDbContext>(options =>
             {
-                options.UseInMemoryDatabase("InMemoryDb");
+                options.UseSqlite("Data Source=Local.db");
+                
             });
             return services;
         }

@@ -15,7 +15,7 @@ public static class DependencyInjection
         
         public IServiceCollection AddDiNotredame()
         {
-            services.AddScoped<IUnitOfWork, AppDbContext>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<ICepRepository, CepRepository>();
             services.AddScoped<ICepService , CepService>();
             services.AddScoped(typeof(IEnvironmentExecution<>), typeof(EnvironmentLitebus<>));

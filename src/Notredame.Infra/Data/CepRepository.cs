@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using Notredame.Domain;
 using Notredame.Domain.Repositories;
 
@@ -8,4 +9,12 @@ public sealed class CepRepository(AppDbContext context)
 {
     public async Task AddAsync(Cep cep)
         => await Context.Ceps.AddAsync(cep);
+
+    public async Task<Cep?> GerByIdAsync(Guid id, CancellationToken cancellationToken)
+        => await Context
+                    .Ceps
+                    .SingleOrDefaultAsync(x => x.ExternalId == id, cancellationToken);
+
+    public void Delete(Cep entity)
+        => Context.Ceps.Remove(entity);
 }

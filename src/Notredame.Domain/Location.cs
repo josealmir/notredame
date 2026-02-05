@@ -5,8 +5,8 @@ namespace Notredame.Domain;
 
 public class Location : Entity
 {
+    public long CepId { get; set; }
     public double Lat { get; set; }
-    
     public double Lon { get; set; }
 
     public LocationDTO Map() => new LocationDTO() { Lat = Lat, Lon = Lon, };
