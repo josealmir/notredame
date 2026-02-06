@@ -13,6 +13,7 @@ public sealed class CepRepository(AppDbContext context)
     public async Task<Cep?> GerByIdAsync(Guid id, CancellationToken cancellationToken)
         => await Context
                     .Ceps
+                    .Include(c => c.Location)
                     .SingleOrDefaultAsync(x => x.ExternalId == id, cancellationToken);
 
     public void Delete(Cep entity)
