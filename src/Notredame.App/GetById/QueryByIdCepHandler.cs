@@ -1,4 +1,7 @@
 using LiteBus.Queries.Abstractions;
+
+using Mapster;
+
 using Notredame.Domain.DTOs;
 using Notredame.Domain.Exceptions;
 using Notredame.Domain.Repositories;
