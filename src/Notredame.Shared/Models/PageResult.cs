@@ -10,6 +10,9 @@ public sealed class PageResult<T> where T: class
         Data = data ?? [];
         Page = new Page(totalData, current, size);
     }
+
+    public PageResult()
+    { }
     
     public Page Page { get; set; }
     public IEnumerable<T> Data { get; set; }
