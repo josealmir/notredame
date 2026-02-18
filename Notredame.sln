@@ -24,6 +24,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionFolder", "SolutionF
 		.editorconfig = .editorconfig
 		README.md = README.md
 		Dockerfile = Dockerfile
+		.env = .env
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notredame.Api.Test", "src\Notredame.Api.Test\Notredame.Api.Test.csproj", "{E2A742D2-0761-4971-AF8C-1435A4768CCF}"

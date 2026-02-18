@@ -1,6 +1,5 @@
 using Microsoft.EntityFrameworkCore;
 using Notredame.Domain;
-using Notredame.Domain.Repositories;
 
 namespace Notredame.Infra.Data;
 

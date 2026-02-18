@@ -60,9 +60,11 @@ public class CepsControllerTest : IClassFixture<ApplicationFactory<Program>>
         // Act
         var response = await _client.GetAsync("/api/v1/ceps/00000000");
         
-        // Assert
+        // Arrange
         response.StatusCode.ShouldBe(HttpStatusCode.GatewayTimeout);
         var problem = JsonSerializer.Deserialize<ProblemDetails>(await response.Content.ReadAsStringAsync());
+        
+        // Assert
         problem.ShouldNotBeNull();
     }
 

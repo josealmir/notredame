@@ -1,6 +1,6 @@
 namespace Notredame.Domain.Repositories;
 
-public interface ICepRepository
+public interface ICepRepository : IRepository<Cep>
 {
     /// <summary>
     /// Save new cep in database

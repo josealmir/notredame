@@ -14,17 +14,21 @@ public class Cep : Entity
     public ProviderCep Provider { get; set; }
 
     public CepCreatedDTO Map()
-    {
-        var cepCreated = new CepCreatedDTO(
-            ZipCode,
-            City, 
-            District, 
-            State, 
-            Ibge, 
-            Provider, 
-            Location.Map());
-        cepCreated.Id = ExternalId;
-        return cepCreated;
-    }
-    
+        => new CepCreatedDTO
+        {
+            ZipCode = ZipCode,
+            City = City,
+            District = District,
+            State = State,
+            CreatedAt = CreatedAt,
+            Provider = Provider,
+            ExternalId = ExternalId,
+            Location = new LocationDTO
+            {
+                Lon = Location.Lon,
+                Lat = Location.Lat,
+            }
+        };
+
+
 }

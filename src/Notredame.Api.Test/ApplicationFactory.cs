@@ -1,11 +1,6 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.DependencyInjection.Extensions;
-
 using Notredame.Api.Settings;
-using Notredame.Api.Test.DataTest;
-using Notredame.Domain.Services;
 using Notredame.Infra;
 
 namespace Notredame.Api.Test;
@@ -19,8 +14,6 @@ public class ApplicationFactory<TStartup> : WebApplicationFactory<TStartup> wher
         {
             services.AddDiNotredame();
             services.AddLitebusNotredame();
-            services.RemoveAll<ICepService>();
-            services.AddSingleton(SetupCepService.CepService);
         });
     }
 }

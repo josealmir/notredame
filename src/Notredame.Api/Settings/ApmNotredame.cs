@@ -1,5 +1,4 @@
 using System.Text.Encodings.Web;
-
 using Notredame.Shared;
 using OpenTelemetry;
 using OpenTelemetry.Trace;
