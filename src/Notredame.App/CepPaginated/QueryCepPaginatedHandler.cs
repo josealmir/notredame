@@ -24,7 +24,7 @@ public sealed class QueryCepPaginatedHandler(
         {
             var result = await repository.GetAllPaginatedAsync(message.PageNumber, message.PageSize, message.SearchBy);
             var page = new PageResult<CepDTO>(
-                 result.Data.Adapt<IEnumerable<CepDTO>>(),
+                 result.Data.Adapt<IEnumerable<CepDTO>>() ??  Enumerable.Empty<CepDTO>(),
                  result.Page.TotalData, 
                  message.PageNumber,
                  message.PageSize

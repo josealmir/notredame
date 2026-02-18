@@ -1,13 +1,20 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Mvc;
 using Notredame.App.CreateCep;
 using Notredame.Domain.DTOs;
+using Notredame.Api.Test.DataTest;
+using Notredame.Infra.Data;
+using Notredame.Shared.Models;
 using System.Text.Json;
 using System.Net.Mime;
 using System.Text;
 using System.Net;
+
+using Notredame.Domain;
+
 using Shouldly;
 using Xunit;
-using Notredame.Api.Test.DataTest;
+
 
 namespace Notredame.Api.Test;
 
@@ -15,11 +22,31 @@ public class CepsControllerTest : IClassFixture<ApplicationFactory<Program>>
 {
     private readonly HttpClient _client;
     private readonly ApplicationFactory<Program> _factory;
-
+    private readonly Cep SearchCep; 
+    private readonly Cep DeleteCep; 
     public CepsControllerTest(ApplicationFactory<Program> factory)
     {
         _factory = factory;
+        var context  = _factory.Services.GetRequiredService<AppDbContext>();
+        context.Ceps.AddRange(SetupCepService.CepDtoOk(), SetupCepService.CepDtoOk());
+        context.SaveChanges();
+        SearchCep = context.Ceps.First();
+        DeleteCep = context.Ceps.OrderBy(x=>x.Id).LastOrDefault();
         _client = factory.CreateClient();
+    }
+
+    [Fact]
+    public async Task GetCepPaginated_ShouldReturnOkWithObjectPage()
+    {
+        // Act
+        var response = await _client.GetAsync("/api/v1/ceps");
+        
+        // Arrange
+        var content = JsonSerializer.Deserialize<PageResult<CepDTO>>(await response.Content.ReadAsStringAsync());
+        
+        // Assert
+        response.StatusCode.ShouldBe(HttpStatusCode.OK);
+        content.ShouldNotBeNull();
     }
 
     [Fact]
@@ -58,7 +85,7 @@ public class CepsControllerTest : IClassFixture<ApplicationFactory<Program>>
     }
     
     [Fact]
-    public async Task GetInCepsWith_ShouldReturnTimeOut()
+    public async Task GetInCepsThatHasTimeOut_ShouldReturnTimeOut()
     {
         // Act
         var response = await _client.GetAsync("/api/v1/ceps/99999999");
@@ -70,7 +97,7 @@ public class CepsControllerTest : IClassFixture<ApplicationFactory<Program>>
     }
 
     [Fact]
-    public async Task GetCepByIdExiste_ShouldReturnNotFound()
+    public async Task GetCepByIdNotExiste_ShouldReturnNotFound()
     {
         // Act
         var response = await _client.GetAsync($"/api/v1/ceps/{Guid.NewGuid()}");
@@ -87,7 +114,7 @@ public class CepsControllerTest : IClassFixture<ApplicationFactory<Program>>
     public async Task GetCepByIdExiste_ShouldReturnOk()
     {
         // Act
-        var response = await _client.GetAsync($"/api/v1/ceps/{SetupCepService.CepDtoOk().ExternalId}");
+        var response = await _client.GetAsync($"/api/v1/ceps/{SearchCep.ExternalId}");
         
         // Arrange
         var content = JsonSerializer.Deserialize<CepDTO>(await response.Content.ReadAsStringAsync());
@@ -114,7 +141,7 @@ public class CepsControllerTest : IClassFixture<ApplicationFactory<Program>>
     }
 
     [Fact]
-    public async Task PostInCepsWithZipCodeValid_ShouldReturnCreated()
+    public async Task PostInCepZipCodeValid_ShouldReturnCreated()
     {
         // Arrange
         var request = new CepCommand { ZipCode = "60872140" };
@@ -130,7 +157,7 @@ public class CepsControllerTest : IClassFixture<ApplicationFactory<Program>>
     }
 
     [Fact]
-    public async Task DeleteCepWithNotExist_ShouldReturnUnprocessableEntity()
+    public async Task DeleteCepNotExist_ShouldReturnUnprocessableEntity()
     {
         // Act
         var response = await _client.DeleteAsync($"/api/v1/ceps/{SetupCepService.CepDtoOk().ExternalId}");
@@ -140,6 +167,20 @@ public class CepsControllerTest : IClassFixture<ApplicationFactory<Program>>
         
         // Assert
         response.StatusCode.ShouldBe(HttpStatusCode.UnprocessableEntity);
+        content.ShouldNotBeNull();
+    }
+    
+    [Fact]
+    public async Task DeleteCepValid_ShouldReturnOK()
+    {
+        // Act
+        var response = await _client.DeleteAsync($"/api/v1/ceps/{DeleteCep.ExternalId}");
+        
+        // Arrange
+        var content = JsonSerializer.Deserialize<CepDTO>(await response.Content.ReadAsStringAsync());
+        
+        // Assert
+        response.StatusCode.ShouldBe(HttpStatusCode.OK);
         content.ShouldNotBeNull();
     }
 }
