@@ -9,9 +9,9 @@ namespace Notredame.App.Pipelines;
 public sealed class ValidatorCommandPreHandler(
     ILogger<ValidatorCommandPreHandler> logger,
     IServiceProvider serviceProvider) : 
-    ICommandPreHandler<ICommand>
+    ICommandValidator<ICommand>
 {
-    public async Task PreHandleAsync(ICommand request, CancellationToken cancellationToken = new CancellationToken())
+    public async Task ValidateAsync(ICommand request, CancellationToken cancellationToken = new CancellationToken())
     {
         using (logger.BeginScope(new Dictionary<string, object> {{"Command", request}}))
         {
@@ -24,7 +24,6 @@ public sealed class ValidatorCommandPreHandler(
             var result = await validator.ValidateAsync(validatorContext, cancellationToken); 
             if (!result.IsValid)
             {
-                
                 logger.LogWarning("Validation failed for {Command} is {result}", request.GetType().Name, result.IsValid);
                 var response = CommandBusExtension.CreateErrorResult(request.GetTypeResult(), new ValidationException(result.Errors)); 
                 AmbientExecutionContext.Current.Abort(response);

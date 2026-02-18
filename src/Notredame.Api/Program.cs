@@ -4,18 +4,14 @@ using System.Text.Json.Serialization;
 using FluentValidation;
 using Scalar.AspNetCore;
 using Notredame.Infra;
-using Notredame.Shared;
 using Notredame.Api.Settings;
-using Serilog;
 using Mapster;
-using MapsterMapper;
 using Notredame.App;
 using Prometheus;
-using Serilog.Enrichers.Span;
-using Serilog.Formatting.Compact;
 using Microsoft.AspNetCore.HttpOverrides;
 
 using Notredame.Api.Builders;
+using Notredame.Api.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 /*
@@ -74,6 +70,12 @@ builder.Services
                 context.ProblemDetails.Instance = context.HttpContext.Request.Path;
             };
         });
+builder.Services.AddRouting(options =>
+{
+    options.LowercaseUrls = true;
+    options.LowercaseQueryStrings = true;
+    options.ConstraintMap["slugify"] = typeof(SlugifyParameterTransformer);
+});
 
 builder.Services.AddDiNotredame();
 
@@ -124,6 +126,8 @@ app.MapPrometheusScrapingEndpoint();
 app.UseAuthentication();
 app.UseAuthorization();
 
+app.UseMiddleware<RequestLogMiddleware>();
+
 app.MapHealthChecks("/hc")
    .AllowAnonymous();
 app.MapMetrics()
@@ -131,4 +135,4 @@ app.MapMetrics()
 
 app.MapControllers();
 
-app.Run();
+await app.RunAsync();

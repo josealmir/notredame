@@ -13,7 +13,12 @@ public record BrazilApiResponse
     public LocationResponse Location { get; set; } = new(); 
 
     public static implicit operator CepDTO?(BrazilApiResponse? response)
-        => response is null ? null : new CepDTO(response.Cep, response.City, response.Neighborhood, response.State, string.Empty,
+        => response is null ? null : new CepDTO(
+            response.Cep,
+            response.City,
+            response.Neighborhood,
+            response.State,
+            string.Empty,
             ProviderCep.Brazilapi,  new LocationDTO
             {
                 Lat = response?.Location?.Coordinates?.Latitude ?? 0,

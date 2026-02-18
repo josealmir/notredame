@@ -9,7 +9,6 @@ public class AppContextFactory: IDesignTimeDbContextFactory<AppDbContext>
     {
         var optionsBuilder = new DbContextOptionsBuilder<AppDbContext>();
         optionsBuilder.UseSqlite("Data Source=Local.db");
-
         return new AppDbContext(optionsBuilder.Options);
     }
 }

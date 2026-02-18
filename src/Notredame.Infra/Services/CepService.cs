@@ -17,7 +17,7 @@ public sealed class CepService(
         {
             try
             {
-                
+                logger.LogInformation("Searching Cep: {cep} ", cep);
                 return await ApiBrazilAsync(cep);
             }
             catch(Exception ex)
@@ -30,6 +30,7 @@ public sealed class CepService(
 
     private async Task<ViacepApiRespose?> ApiViaCepAsync(string cep, CancellationToken cancellationToken = default)
     {
+        logger.LogInformation("Searching Cep in ViaCep: {cep} ", cep);
         var httpClient = httpClientFactory.CreateClient(ViaCepOptionNotredame.SectionName);
         var response = await httpClient.GetFromJsonAsync<ViacepApiRespose>($"ws/{cep}/json", cancellationToken);
         return response;
@@ -37,6 +38,7 @@ public sealed class CepService(
 
     private async Task<BrazilApiResponse?> ApiBrazilAsync(string cep, CancellationToken cancellationToken = default)
     {
+        logger.LogInformation("Searching Cep in BrazilApi: {cep} ", cep);
         var httpClient = httpClientFactory.CreateClient(BrasilCepOptionNotredame.SectionName);
         var response = await httpClient.GetFromJsonAsync<BrazilApiResponse>($"api/cep/v2/{cep}", cancellationToken);
         return response;

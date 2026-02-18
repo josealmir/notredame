@@ -6,5 +6,9 @@
     <Nullable>enable</Nullable>
     <RootNamespace>Notredame.Domain</RootNamespace>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Notredame.Shared\Notredame.Shared.csproj" />
+  </ItemGroup>
     
 </Project>
