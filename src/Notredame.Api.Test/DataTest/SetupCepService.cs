@@ -8,18 +8,22 @@ namespace Notredame.Api.Test.DataTest;
 
 public static class SetupCepService
 {
-    private static CepDTO CepDtoOk()
-        => new CepDTO("60872140", "Fortaleza", "Messejana", "Ceara", "60874", ProviderCep.Viacep, null);
+    public static Cep CepDtoOk()
+        => new Cep
+        {
+            City = "Fortaleza",
+            Location = new Location
+            {
+                Lat = -897.15649,
+                Lon =  897.15649
+            },
+            District = "Messejana",
+            State = "CE",
+            Provider = ProviderCep.Brazilapi,
+            ZipCode = "60872140",
+            Ibge = "979"
+        };
 
-    private static CepDTO CepDtoNotFound()
+    public static CepDTO CepDtoNotFound()
         => new CepDTO("", "", "", "", "", ProviderCep.Viacep, null);
-    
-    public static ICepService CepService()
-    {
-        var mockCepService = Substitute.For<ICepService>();
-        mockCepService.SearchCepAsync("60872140").Returns(Task.FromResult(SetupCepService.CepDtoOk()));
-        mockCepService.SearchCepAsync("60874300").Returns(Task.FromResult(SetupCepService.CepDtoNotFound()));
-        mockCepService.When(x => x.SearchCepAsync("00000000")).Do(x=> throw new TimeoutException());
-        return mockCepService;
-    }
 }
