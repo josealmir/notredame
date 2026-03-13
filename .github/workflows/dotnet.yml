@@ -32,7 +32,8 @@ jobs:
       run: dotnet tool install dotnet-reportgenerator-globaltool --global
     - name: Generate coverage report
       run: reportgenerator -reports:.${{github.workspace}}/report/**/*.xml -targetdir:${{github.workspace}}/report -reporttypes:MarkdownSummary
-
+    - name: Convert sarif for uploading to GitHub
+      uses: security-code-scan/security-code-scan-results-action@v1.3
     - name: Code Coverage Summary Report
       uses: irongut/CodeCoverageSummary@v1.3.0
       with:
