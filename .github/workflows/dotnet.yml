@@ -38,14 +38,15 @@ jobs:
     - name: Code Coverage Summary Report
       uses: irongut/CodeCoverageSummary@v1.3.0
       with:
-        filename: .${{github.workspace}}/report/**/result.cobertura.xml
+        filename: .${{github.workspace}}/report/**/*.xml
         badge: true
         format: 'markdown'
         output: 'both'
     - name: Add Coverage PR Comment
-      uses: stefanzweifel/git-auto-commit-action@v5
+      uses: marocchino/sticky-pull-request-comment@v2
+      if: github.event_name == 'pull_request'
       with:
-         commit_message: "Automated report generation: $REPORT_DATE"
-         files: code-coverage-results.md
+        recreate: true
+        path: code-coverage-results.md
     - name: Write to Job Summary
       run: cat code-coverage-results.md >> $GITHUB_STEP_SUMMARY
