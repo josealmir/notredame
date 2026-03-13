@@ -1,4 +1,4 @@
-name: Build Notredame-Api
+name: Build-CI Notredame-Api
 
 on:
   push:
@@ -6,8 +6,13 @@ on:
   pull_request:
     branches: ["main"]
 
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
 jobs:
-  build:
+  build-test:
     runs-on: ubuntu-latest
 
     steps:
