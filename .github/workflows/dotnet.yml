@@ -31,7 +31,7 @@ jobs:
     - name: Install ReportGenerator tool
       run: dotnet tool install dotnet-reportgenerator-globaltool --global
     - name: Generate coverage report
-      run: reportgenerator -reports:./coverage/**/*.xml -targetdir:${{github.workspace}}/report -reporttypes:MarkdownSummary
+      run: reportgenerator -reports:.${{github.workspace}}/report/**/*.xml -targetdir:${{github.workspace}}/report -reporttypes:MarkdownSummary
 
     - name: Code Coverage Summary Report
       uses: irongut/CodeCoverageSummary@v1.3.0
