@@ -23,7 +23,6 @@ public class TestCepService : ICepService
             State = "State DTO",
             District = "District DTO",
             CreatedAt = DateTimeOffset.UtcNow,
-            ExternalId = Guid.NewGuid(),
             Provider = ProviderCep.Brazilapi,
             ZipCode = cep,
         });

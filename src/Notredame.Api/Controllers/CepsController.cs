@@ -21,7 +21,7 @@ public class CepsController(
     ICommandMediator commandMediator) : BaseController(queryMediator, commandMediator)
 {
     [HttpGet]
-    [ProducesResponseType<PageResult<CepDTO>>(StatusCodes.Status200OK)]
+    [ProducesResponseType<PageResult<CepResult>>(StatusCodes.Status200OK)]
     public async Task<IActionResult> GetPagineted([FromQuery] QueryCepPaginated query)
         => await HandleGetAsync(query);
 
