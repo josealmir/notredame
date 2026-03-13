@@ -45,6 +45,6 @@ jobs:
       uses: stefanzweifel/git-auto-commit-action@v5
       with:
         commit_message: "Automated report generation: $REPORT_DATE"
-        files: code-coverage-results.md
+        files: .${{github.workspace}}/report/MarkdownSummary.md
     - name: Write to Job Summary
       run: cat code-coverage-results.md >> $GITHUB_STEP_SUMMARY
