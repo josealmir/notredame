@@ -1,11 +1,8 @@
-using Microsoft.Extensions.DependencyInjection;
-
-using Notredame.App.Common;
-using Notredame.Domain.Commons;
-using Notredame.Domain.Repositories;
+using Notredame.Infra.Data;
 using Notredame.Infra.Services;
 using Notredame.Domain.Services;
-using Notredame.Infra.Data;
+using Notredame.Domain.Repositories;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Notredame.Infra;
 
@@ -16,9 +13,8 @@ public static class DependencyInjection
         public IServiceCollection AddDiNotredame()
         {
             services.AddScoped<IUnitOfWork, UnitOfWork>();
-            services.AddScoped<ICepRepository, CepRepository>();
             services.AddScoped<ICepService , CepService>();
-            services.AddScoped(typeof(IEnvironmentExecution<>), typeof(EnvironmentLitebus<>));
+            services.AddScoped<ICepRepository, CepRepository>();
             return services;
         }
     }

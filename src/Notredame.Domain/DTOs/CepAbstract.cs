@@ -2,7 +2,6 @@ namespace Notredame.Domain.DTOs;
 
 public abstract record CepAbstract
 {
-    public Guid ExternalId { get; set; } = new();
     public string ZipCode { get; set; } = string.Empty;
     public string City { get; set; } = string.Empty; 
     public string District { get; set; } = string.Empty; 

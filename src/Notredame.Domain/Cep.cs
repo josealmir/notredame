@@ -22,12 +22,12 @@ public class Cep : Entity
             State = State,
             CreatedAt = CreatedAt,
             Provider = Provider,
-            ExternalId = ExternalId,
             Location = new LocationDTO
             {
                 Lon = Location.Lon,
                 Lat = Location.Lat,
-            }
+            },
+            ExternalId = ExternalId
         };
 
 

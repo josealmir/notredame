@@ -18,7 +18,6 @@ public record CepDTO: CepAbstract
         Provider = provider;
         Location = location;
         CreatedAt = DateTime.UtcNow;
-        ExternalId = Guid.NewGuid();
     }
 
     public CepDTO() { }

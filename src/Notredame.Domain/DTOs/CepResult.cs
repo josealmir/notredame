@@ -1,6 +1,6 @@
 namespace Notredame.Domain.DTOs;
 
-public record CepCreatedDTO : CepAbstract
+public record CepResult : CepAbstract
 {
     public Guid ExternalId { get; set; }
 }
